@@ -91,13 +91,4 @@ document.addEventListener('DOMContentLoaded', function() {
         projectObserver.observe(card);
     });
     
-    // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-    }
 });
