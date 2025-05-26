@@ -199,7 +199,7 @@ section {
     align-items: center;
     background: var(--section-bg);
     text-align: center;
-    padding-top: 120px;
+    padding-top: 150px; /* was 80 */
 }
 
 .hero-content h1 {
@@ -768,6 +768,10 @@ footer {
     .timeline-item:nth-child(odd)::before,
     .timeline-item:nth-child(even)::before {
         left: 21px;
+    }
+    
+    #hero {
+        padding-top: 120px; /* Increase this value if needed */
     }
 }
 
