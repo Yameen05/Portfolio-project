@@ -31,8 +31,12 @@
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm <span>Yameen Alsaaidah</span></h1>
-                <h2>Computer Science Student | Software Engineer</h2>
+                <h1>Hi, I'm</h1>
+                <h1><span>Yameen Alsaaidah</span></h1>
+
+                <h2>
+  <span id="typewriter"></span>
+</h2>
                 <div class="cta-buttons">
                     <a href="/files/YameenAlsaaidahResume.pdf" download="YameenAlsaaidahResume.pdf">DOWNLOAD CV</a>
                 </div>
@@ -70,7 +74,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>
+                        
                         <i class="fa-solid fa-school"></i> <h3>B.S. Computer Science</h3>
                         <h4>University of North Carolina at Charlotte</h4>
                         <span class="date">Aug 2023 – May 2027</span>
@@ -288,5 +292,41 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+const words = [
+    "Computer Science Student",
+    "Software Engineer",
+    "Full-Stack Developer",
+];
+let i = 0;
+let timer;
+let isDeleting = false;
+let text = "";
+
+function typeWriter() {
+  const currentWord = words[i];
+  if (!isDeleting) {
+    text = currentWord.substring(0, text.length + 1);
+    document.getElementById('typewriter').textContent = text;
+    if (text === currentWord) {
+      setTimeout(() => { isDeleting = true; typeWriter(); }, 1500);
+    } else {
+      setTimeout(typeWriter, 85);
+    }
+  } else {
+    text = currentWord.substring(0, text.length - 1);
+    document.getElementById('typewriter').textContent = text;
+    if (text === "") {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+      setTimeout(typeWriter, 500);
+    } else {
+      setTimeout(typeWriter, 40);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", typeWriter);
+</script>
 </body>
 </html>

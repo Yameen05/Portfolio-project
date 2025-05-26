@@ -208,8 +208,20 @@ section {
     line-height: 1.2;
 }
 
+/* Make "Hi, I'm" smaller than the name in the hero section */
+.hero-content h1:first-child {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
 .hero-content h1 span {
     color: var(--accent-color);
+    font-size: 4rem;
+    font-weight: 800;
+    display: block;
+    margin-top: 8px;
 }
 
 .hero-content h2 {
@@ -610,7 +622,6 @@ section {
 .contact-box i {
     font-size: 1.5rem;
     margin-right: 15px;
-    color: var(--accent-color);
 }
 
 .contact-box span {
@@ -619,15 +630,14 @@ section {
 
 .contact-box a[href^="mailto:"],
 .contact-box a[href^="tel:"] {
-    color: var(--accent-color);
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
     transition: color 0.2s;
 }
 
 .contact-box a[href^="mailto:"]:hover,
 .contact-box a[href^="tel:"]:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
@@ -648,46 +658,6 @@ section {
     transform: translateY(-5px);
 }
 
-.contact-form {
-    flex: 1;
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px var(--shadow-color);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    background: var(--card-bg);
-    color: var(--text-color);
-    font-family: inherit;
-}
-
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-form button {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form button:hover {
-    background: var(--primary-color);
-    transform: translateY(-3px);
-}
 
 /* Footer */
 footer {
@@ -721,6 +691,18 @@ footer {
 
 .theme-toggle:hover {
     transform: translateY(-3px) scale(1.1);
+}
+
+/* Typewriter Effect */
+#typewriter::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Responsive Design */
