@@ -839,17 +839,24 @@ footer {
         height: 40px;
         font-size: 1rem;
     }
-   @media screen and (max-width: 320px) {
+    .theme-popup {
+        bottom: 80px;
+        right: 20px;
+        padding: 14px 20px 14px 14px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 360px) {
     .theme-toggle {
         width: 36px;
         height: 36px;
         font-size: 0.9rem;
     }
     .theme-popup {
-        bottom: 80px;
-        right: 20px;
-        padding: 14px 20px 14px 14px;
-        font-size: 0.9rem;
-   }
+        bottom: 70px;
+        right: 10px;
+        padding: 12px 14px 12px 12px;
+        font-size: 0.85rem;
     }
 }
