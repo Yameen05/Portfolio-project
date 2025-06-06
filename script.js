@@ -91,4 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
         projectObserver.observe(card);
     });
     
+    window.addEventListener('DOMContentLoaded', () => {
+      const popup = document.getElementById('theme-popup');
+      const closeBtn = document.getElementById('close-popup');
+      if (popup && closeBtn) {
+        closeBtn.onclick = () => popup.style.display = 'none';
+        setTimeout(() => { popup.style.display = 'none'; }, 6000); // auto-hide after 6 seconds
+      }
+    });
 });

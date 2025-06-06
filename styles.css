@@ -693,6 +693,40 @@ footer {
     transform: translateY(-3px) scale(1.1);
 }
 
+/* Theme Popup */
+.theme-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  padding: 18px 24px 18px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  z-index: 2000;
+  border: 1px solid var(--border-color);
+  animation: fadeIn 0.5s;
+}
+
+.theme-popup button {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
 /* Typewriter Effect */
 #typewriter::after {
   content: '|';
