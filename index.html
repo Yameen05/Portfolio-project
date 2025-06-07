@@ -9,6 +9,9 @@
 </head>
 <body>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
     <!-- Navigation -->
 
     <nav id="navbar">
@@ -21,6 +24,7 @@
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="/files/YameenAlsaaidahResume.pdf" download="YameenAlsaaidahResume.pdf" class="cv-download">DOWNLOAD RESUME</a></li>
                 <li><a href="https://github.com/Yameen05" target="_blank" class="github-btn"><i class="fab fa-github"></i></a></li>
             </ul>
         </div>
@@ -29,6 +33,7 @@
     <!-- Hero Section -->
 
     <section id="hero">
+        <div id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm</h1>
@@ -38,7 +43,7 @@
   <span id="typewriter"></span>
 </h2>
                 <div class="cta-buttons">
-                    <a href="/files/YameenAlsaaidahResume.pdf" download="YameenAlsaaidahResume.pdf">DOWNLOAD CV</a>
+                    <a href="/files/YameenAlsaaidahResume.pdf" download="YameenAlsaaidahResume.pdf">DOWNLOAD RESUME</a>
                 </div>
                     <div class="social-links">
                         <a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i></a>
@@ -55,10 +60,10 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                   <p>I'm a Computer Science student at UNC Charlotte, graduating in May 2027. I'm passionate about software engineering and enjoy building web applications that solve real-world problems. So far, I’ve built projects using HTML/CSS, Python, Django, and JavaScript, from basic CRUD apps to more dynamic web apps with real functionality.</p>
-                    <p>I’m currently working on building structured, production-style applications to strengthen my understanding of real-world software development practices, from database design to API integration and application architecture.
+                   <p>I'm a Computer Science student at UNC Charlotte, graduating in May 2027. I'm passionate about software engineering and enjoy building web applications that solve real-world problems. So far, I've built projects using HTML/CSS, Python, Django, and JavaScript, from basic CRUD apps to more dynamic web apps with real functionality.</p>
+                    <p>I'm currently working on building structured, production-style applications to strengthen my understanding of real-world software development practices, from database design to API integration and application architecture.
                     </p>
-                    <p>I’m seeking an internship where I can apply my current experience, contribute meaningfully to ongoing projects, and continue developing as a software engineer in a professional environment.</p>
+                    <p>I'm seeking an internship where I can apply my current experience, contribute meaningfully to ongoing projects, and continue developing as a software engineer in a professional environment.</p>
 </p>
                 </div>
                     <div class="about-image">
@@ -68,7 +73,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Experience Section -->
 
     <section id="experience">
@@ -130,101 +135,148 @@
     </section>
 
     <!-- Projects Section -->
-     
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Recent Projects</h2>
+            
+
+
             <div class="projects-grid">
-                
                 <!-- Project 1 -->
-                 
-                <div class="project-card triangle-shape">
+                <div class="project-card triangle-shape" data-category="python">
                     <div class="project-image">
                         <img src="./pics/django.jpg" alt="Web App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/JakeHalbach/ITSC3155_Group8" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Django Blog App</h3>
                         <p>A full-stack blog platform with user authentication and CRUD functionality built using Django and SQLite.</p>
-                        <a href="https://github.com/JakeHalbach/ITSC3155_Group8" target="_blank" class="project-link">View Project</a>
+                        <div class="project-tags">
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>HTML/CSS</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                 
-                <div class="project-card triangle-shape">
+                <div class="project-card triangle-shape" data-category="python">
                     <div class="project-image">
                         <img src="./pics/cloud.png" alt="Weather Tracker">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Yameen05/weather-app" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Weather Web App</h3>
                         <p>The Python-based Weather Tracker utilizes the OpenWeatherMap API to fetch real-time weather data. Users can enter a specific location to get information such as temperature and current weather conditions.</p>
-                        <a href="https://github.com/Yameen05/weather-app " target="_blank" class="project-link">View Project</a>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>API</span>
+        </div>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                 
-                <div class="project-card triangle-shape">
+                <div class="project-card triangle-shape" data-category="web">
                     <div class="project-image">
                         <img src="./pics/sharepoint.png" alt="Share Point Portal">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-info-circle"></i> Internal Project
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>HR SharePoint Portal</h3>
-                          <p>Internal portal built on SharePoint for CPCC’s HR department, improving data accessibility and documentation workflow.</p>
-                    </div>
-                    
+                        <p>Internal portal built on SharePoint for CPCC's HR department, improving data accessibility and documentation workflow.</p>
+                        <div class="project-tags">
+                            <span>SharePoint</span>
 
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Project 4 -->
-                 
-                <div class="project-card triangle-shape">
+                <div class="project-card triangle-shape" data-category="web">
                     <div class="project-image">
                         <img src="/pics/itis3135.png" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://yameen05.github.io/itis3135/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Yameen05/itis3135" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Portfolio Website</h3>
                         <p>This portfolio website was created for my ITIS3135 class which showcases my projects and skills, built using HTML, CSS, and JavaScript.</p>
-                        <a href="https://yameen05.github.io/itis3135/" target="_blank" class="project-link">View Project</a>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                     </div>
-            </div>
-               
-            <!-- Project 5 -->
-             
-                <div class="project-card triangle-shape">
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card triangle-shape" data-category="java">
                     <div class="project-image">
-                        <img src="./pics/bmi.png" alt="Portfolio Website">
+                        <img src="./pics/bmi.png" alt="BMI Calculator">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Yameen05/BMI-Calculator" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>BMI Calculator</h3>
-                        <p>This BMI Calculator was developed using Java for my final exam. I completed it in under 2 hours, demonstrating my ability to quickly apply core programming concepts under time constraints. The program takes a user's height and weight, calculates their Body Mass Index (BMI), and classifies it into standard health categories based on the result.</p>                       
-                        <a href="https://github.com/Yameen05/BMI-Calculator" target="_blank" class="project-link">View Project</a>
+                        <p>This BMI Calculator was developed using Java for my final exam. I completed it in under 2 hours, demonstrating my ability to quickly apply core programming concepts under time constraints.</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                        </div>
                     </div>
                 </div>
-            
+            </div>
         </div>
     </section>
 
     <!-- Certificates Section -->
-     
-<section id="certificates">
-    <div class="container">
-        <h2 class="section-title">Certificates</h2>
-        <div class="certificates-grid">
-            <div class="certificate-card">
-                <h3>Responsive Web Design – freeCodeCamp</h3>
-                <p>Learned HTML, CSS, Flexbox, Grid, and created responsive web layouts from scratch.</p>
-                <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/responsive-web-design" class="view-certificate" target="_blank">View Certificate</a>
-            </div>
+    <section id="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <h3>Responsive Web Design – freeCodeCamp</h3>
+                    <p>Learned HTML, CSS, Flexbox, Grid, and created responsive web layouts from scratch.</p>
+                    <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/responsive-web-design" class="view-certificate" target="_blank">View Certificate</a>
+                </div>
 
-            <div class="certificate-card">
-                <h3>JavaScript Algorithms and Data Structures – freeCodeCamp</h3>
-                <p>Mastered JavaScript basics, ES6, functional programming, and data structures through hands-on coding projects.</p>
-                <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/javascript-algorithms-and-data-structures-v8" class="view-certificate" target="_blank">View Certificate</a>
+                <div class="certificate-card">
+                    <h3>JavaScript Algorithms and Data Structures – freeCodeCamp</h3>
+                    <p>Mastered JavaScript basics, ES6, functional programming, and data structures through hands-on coding projects.</p>
+                    <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/javascript-algorithms-and-data-structures-v8" class="view-certificate" target="_blank">View Certificate</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Skills Section -->
      
@@ -248,10 +300,8 @@
                         <li>Spring Boot</li>
                         <li>Django</li>
                         <li>React</li>
-                        
                     </ul>
                 </div>
-              
                 
                 <div class="skills-category">
                     <h3>Tools & Applications</h3>
@@ -261,7 +311,6 @@
                         <li>IntelliJ IDEA</li>
                     </ul>
                 </div>
-                
                 
                 <div class="skills-category">
                     <h3>Databases</h3>
@@ -282,20 +331,21 @@
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-box">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:yameenrizeq@gmail.com">yameenrizeq@gmail.com</a>
-                    </div>
-                    <div class="contact-box">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:19803184863">(980) 318-4863</a>
+                    <div class="contact-boxes">
+                        <div class="contact-box">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:yameenrizeq@gmail.com">yameenrizeq@gmail.com</a>
+                        </div>
+                        <div class="contact-box">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:19803184863">(980) 318-4863</a>
+                        </div>
                     </div>
                     <div class="social-links">
-                         <a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-             
             </div>
         </div>
     </section>
@@ -349,8 +399,8 @@ document.addEventListener("DOMContentLoaded", typeWriter);
 </script>
 
 <div id="theme-popup" class="theme-popup">
-  <span>Click the button to toggle dark mode!</span>
-  <button id="close-popup" aria-label="Close popup">&times;</button>
+    Toggle dark mode
+    <button class="close-btn" aria-label="Close popup">&times;</button>
 </div>
 </body>
 </html>

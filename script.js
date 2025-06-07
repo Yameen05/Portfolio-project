@@ -1,4 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles.js
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#8000ff' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: false },
+            size: { value: 3, random: true },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#8000ff',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            }
+        },
+        retina_detect: true
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -55,20 +91,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animate timeline items on scroll
     const timelineItems = document.querySelectorAll('.timeline-item');
-    const observer = new IntersectionObserver((entries) => {
+    const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.2 });
     
     timelineItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
+        timelineObserver.observe(item);
     });
     
     // Animate project cards on scroll
@@ -92,11 +124,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     window.addEventListener('DOMContentLoaded', () => {
-      const popup = document.getElementById('theme-popup');
-      const closeBtn = document.getElementById('close-popup');
-      if (popup && closeBtn) {
-        closeBtn.onclick = () => popup.style.display = 'none';
-        setTimeout(() => { popup.style.display = 'none'; }, 6000); // auto-hide after 6 seconds
-      }
+        const popup = document.getElementById('theme-popup');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        if (popup && closeBtn) {
+            // Function to hide popup with animation
+            const hidePopup = () => {
+                popup.classList.add('hiding');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 300);
+            };
+
+            // Close button click handler
+            closeBtn.onclick = hidePopup;
+
+            // Auto-hide after 3 seconds
+            setTimeout(hidePopup, 3000);
+
+            // Hide popup when theme is toggled
+            themeToggle.addEventListener('click', hidePopup);
+        }
     });
 });
