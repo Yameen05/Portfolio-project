@@ -53,14 +53,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Sticky navbar on scroll
+    // Navbar hide/show on scroll
+    let lastScrollTop = 0;
     const navbar = document.getElementById('navbar');
+    const scrollThreshold = 50; // Minimum scroll amount before hiding navbar
+
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.style.boxShadow = '0 2px 10px var(--shadow-color)';
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Only trigger on mobile devices
+        if (window.innerWidth <= 768) {
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                // Scrolling down
+                navbar.classList.add('nav-hidden');
+                navbar.classList.remove('nav-visible');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('nav-hidden');
+                navbar.classList.add('nav-visible');
+            }
         } else {
-            navbar.style.boxShadow = 'none';
+            // On desktop, always show navbar
+            navbar.classList.remove('nav-hidden');
+            navbar.classList.add('nav-visible');
         }
+        
+        lastScrollTop = scrollTop;
     });
     
     // Dark mode toggle
