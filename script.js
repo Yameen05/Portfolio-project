@@ -151,14 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 popup.classList.add('hiding');
                 setTimeout(() => {
                     popup.style.display = 'none';
-                }, 300);
+                }, 500);
             };
 
             // Close button click handler
             closeBtn.onclick = hidePopup;
 
-            // Auto-hide after 3 seconds
-            setTimeout(hidePopup, 3000);
+            // Auto-hide after 7 seconds
+            setTimeout(hidePopup, 7000);
 
             // Hide popup when theme is toggled
             themeToggle.addEventListener('click', hidePopup);
