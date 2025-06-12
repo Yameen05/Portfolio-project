@@ -34,7 +34,44 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         retina_detect: true
     });
+    
+    // Typewriter Effect
+    const words = [
+        "Computer Science Student",
+        "Aspiring Software Engineer",
+        "Front-End Developer",
+        "Full-Stack Developer"
+    ];
+    let i = 0;
+    let isDeleting = false;
+    let text = "";
 
+    function typeWriter() {
+        const currentWord = words[i];
+        if (!isDeleting) {
+            text = currentWord.substring(0, text.length + 1);
+            document.getElementById('typewriter').textContent = text;
+            if (text === currentWord) {
+                setTimeout(() => { isDeleting = true; typeWriter(); }, 1200);
+            } else {
+                setTimeout(typeWriter, 85);
+            }
+        } else {
+            text = currentWord.substring(0, text.length - 1);
+            document.getElementById('typewriter').textContent = text;
+            if (text === "") {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                setTimeout(typeWriter, 500);
+            } else {
+                setTimeout(typeWriter, 40);
+            }
+        }
+    }
+
+    // Start the typewriter effect
+    typeWriter();
+    
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

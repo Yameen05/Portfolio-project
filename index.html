@@ -19,13 +19,13 @@
         <div class="container">
             <a href="" class="logo">Yameen Alsaaidah</a>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/files/YameenAlsaaidahResume.pdf" download="YameenAlsaaidahResume.pdf" class="cv-download">DOWNLOAD RESUME</a></li>
+                <li> <i class="fa-duotone fa-solid fa-user"></i> <a href="#about">About</a></li>
+                <li> <i class="fa-duotone fa-solid fa-briefcase"></i> <a href="#experience">Experience</a></li>
+                <li> <i class="fa-duotone fa-solid fa-code"></i> <a href="#projects">Projects</a></li>
+                <li> <i class="fa-duotone fa-solid fa-certificate"></i> <a href="#certificates">Certificates</a></li>
+                <li> <i class="fa-duotone fa-solid fa-tools"></i> <a href="#skills">Skills</a></li>
+                <li> <i class="fa-duotone fa-solid fa-phone"></i> <a href="#contact">Contact</a></li>
+                <li> <a href="/files/YameenAlsaaidahResume.pdf" download="YameenAlsaaidahResume.pdf" class="cv-download"><i class="fa-regular fa-download"></i> RESUME</a></li>
                 <li><a href="https://github.com/Yameen05" target="_blank" class="github-btn"><i class="fab fa-github"></i></a></li>
             </ul>
         </div>
@@ -353,55 +353,24 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Yameen Alsaaidah. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-text">
+                    <span class="copyright">©</span>
+                    <span class="year">2025</span>
+                    <span class="name">Yameen Alsaaidah</span>
+                    <span class="rights">All rights reserved.</span>
+                </div>
+                <div class="footer-decoration">
+                    <div class="footer-line"></div>
+                </div>
+            </div>
         </div>
     </footer>
 
-    
-    
-    <!-- JavaScript for Typewriter Effect -->
-</body>
     <script src="script.js"></script>
-<script>
-const words = [
-    "Computer Science Student",
-    "Software Engineer",
-    "Full-Stack Engineer",
-];
-let i = 0;
-let timer;
-let isDeleting = false;
-let text = "";
-
-function typeWriter() {
-  const currentWord = words[i];
-  if (!isDeleting) {
-    text = currentWord.substring(0, text.length + 1);
-    document.getElementById('typewriter').textContent = text;
-    if (text === currentWord) {
-      setTimeout(() => { isDeleting = true; typeWriter(); }, 1500);
-    } else {
-      setTimeout(typeWriter, 85);
-    }
-  } else {
-    text = currentWord.substring(0, text.length - 1);
-    document.getElementById('typewriter').textContent = text;
-    if (text === "") {
-      isDeleting = false;
-      i = (i + 1) % words.length;
-      setTimeout(typeWriter, 500);
-    } else {
-      setTimeout(typeWriter, 40);
-    }
-  }
-}
-
-document.addEventListener("DOMContentLoaded", typeWriter);
-</script>
-
-<div id="theme-popup" class="theme-popup">
-    Toggle dark mode
-    <button class="close-btn" aria-label="Close popup">&times;</button>
-</div>
+    <div id="theme-popup" class="theme-popup">
+        Toggle dark mode
+        <button class="close-btn" aria-label="Close popup">&times;</button>
+    </div>
 </body>
 </html>

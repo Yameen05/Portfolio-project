@@ -70,15 +70,30 @@ section {
     font-size: 2.5rem;
     color: var(--primary-color);
     position: relative;
+    padding-bottom: 15px;
 }
 
 .section-title::after {
     content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--accent-color);
-    margin: 15px auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-color) 50%, 
+        transparent 100%
+    );
+    opacity: 0.9;
+    animation: footerGlow 2s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
 }
 
 .btn {
@@ -123,6 +138,30 @@ section {
     color: var(--primary-color);
     text-decoration: none;
     letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+#navbar .logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-color) 50%, 
+        transparent 100%
+    );
+    opacity: 0.7;
+    animation: footerGlow 2s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
 }
 
 #navbar ul {
@@ -169,35 +208,28 @@ section {
 
 /* Make the GitHub button in the navbar icon-only, larger, and styled as a circle */
 .github-btn {
-    background: transparent;
-    color: var(--accent-color) !important;
-    border: none;
-    padding: 0;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem; /* Bigger icon */
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-    box-shadow: none;
+    color: var(--text-color);
+    transform: translateY(-5px) scale(1.1);
 }
 
 .github-btn i {
     font-size: 2rem;
     line-height: 1;
 }
+
 /* Remove underline effect from the GitHub icon button in the navbar */
 #navbar ul li a.github-btn::after {
     display: none !important;
 }
 
+#navbar ul li a.cv-download::after {
+    display: none !important;
+}
+
 .github-btn:hover,
 .github-btn:focus {
-    background: var(--accent-color);
-    color: #fff !important;
-    transform: translateY(-2px) scale(1.08);
+    color: var(--accent-color);
+    transform: translateY(-5px) scale(1.1);
 }
 
 /* Hero Section */
@@ -920,6 +952,18 @@ footer {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid var(--border-color);
+}
+.footer-line {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-color) 50%, 
+        transparent 100%
+    );
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    opacity: 0.5;
 }
 
 /* Dark Mode Toggle Button */
