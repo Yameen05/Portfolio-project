@@ -91,9 +91,9 @@ section {
 }
 
 @keyframes footerGlow {
-    0% { opacity: 0.7; }
+    0% { opacity: 0.3; }
     50% { opacity: 1; }
-    100% { opacity: 0.7; }
+    100% { opacity: 0.3; }
 }
 
 .btn {
@@ -154,14 +154,14 @@ section {
         var(--accent-color) 50%, 
         transparent 100%
     );
-    opacity: 0.7;
+    opacity: 0.8;
     animation: footerGlow 2s ease-in-out infinite;
 }
 
 @keyframes footerGlow {
-    0% { opacity: 0.8; }
+    0% { opacity: 0.4; }
     50% { opacity: 1; }
-    100% { opacity: 0.8; }
+    100% { opacity: 0.4; }
 }
 
 #navbar ul {
@@ -963,7 +963,14 @@ footer {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
-    opacity: 0.5;
+    opacity: 0.8;
+    animation: footerGlow 2s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
 }
 
 /* Dark Mode Toggle Button */
