@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typewriter Effect
     const words = [
         "Computer Science Student",
-        "Aspiring Software Engineer",
+        "Software Engineer",
         "Front-End Developer",
         "Full-Stack Developer"
     ];
