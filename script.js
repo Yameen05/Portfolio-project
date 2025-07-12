@@ -35,6 +35,44 @@ document.addEventListener('DOMContentLoaded', function() {
         retina_detect: true
     });
     
+    // Mobile Menu Functionality
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileCloseBtn = document.querySelector('.mobile-close-btn');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-menu a');
+    
+    // Toggle mobile menu
+    hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close mobile menu
+    mobileCloseBtn.addEventListener('click', function() {
+        hamburgerMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Close mobile menu when clicking on overlay
+    mobileMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileMenuOverlay) {
+            hamburgerMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close mobile menu when clicking on navigation links
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburgerMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
     // Typewriter Effect
     const words = [
         "Computer Science Student",
@@ -72,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the typewriter effect
     typeWriter();
     
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links (both desktop and mobile)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -90,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar hide/show on scroll
+    // Navbar hide/show on scroll (only for desktop)
     let lastScrollTop = 0;
     const navbar = document.getElementById('navbar');
     const scrollThreshold = 50; // Minimum scroll amount before hiding navbar
@@ -98,8 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Only trigger on mobile devices
-        if (window.innerWidth <= 768) {
+        // Only trigger on desktop devices (when mobile menu is not active)
+        if (window.innerWidth > 768 && !mobileMenuOverlay.classList.contains('active')) {
             if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
                 // Scrolling down
                 navbar.classList.add('nav-hidden');
@@ -110,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbar.classList.add('nav-visible');
             }
         } else {
-            // On desktop, always show navbar
+            // On mobile or when menu is open, always show navbar
             navbar.classList.remove('nav-hidden');
             navbar.classList.add('nav-visible');
         }

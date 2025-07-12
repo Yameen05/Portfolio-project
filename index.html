@@ -19,7 +19,16 @@
     <nav id="navbar">
         <div class="container">
             <a href="" class="logo">Yameen Alsaaidah</a>
-            <ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu">
                 <li> <i class="fa-duotone fa-solid fa-user"></i> <a href="#about">About</a></li>
                 <li> <i class="fa-duotone fa-solid fa-briefcase"></i> <a href="#experience">Experience</a></li>
                 <li> <i class="fa-duotone fa-solid fa-code"></i> <a href="#projects">Projects</a></li>
@@ -31,6 +40,29 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <h3>Menu</h3>
+                <div class="mobile-close-btn">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </div>
+            </div>
+            <ul class="mobile-nav-menu">
+                <li><a href="#about"><i class="fa-duotone fa-solid fa-user"></i> About</a></li>
+                <li><a href="#experience"><i class="fa-duotone fa-solid fa-briefcase"></i> Experience</a></li>
+                <li><a href="#projects"><i class="fa-duotone fa-solid fa-code"></i> Projects</a></li>
+                <li><a href="#certificates"><i class="fa-duotone fa-solid fa-certificate"></i> Certificates</a></li>
+                <li><a href="#skills"><i class="fa-duotone fa-solid fa-tools"></i> Skills</a></li>
+                <li><a href="#contact"><i class="fa-duotone fa-solid fa-phone"></i> Contact</a></li>
+                <li><a href="/files/YameenAlsaaidah_Resume.pdf" download="YameenAlsaaidah_Resume.pdf" class="mobile-cv-download"><i class="fa-regular fa-download"></i> Download Resume</a></li>
+                <li><a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Hero Section -->
 
@@ -194,7 +226,7 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Django Blog App</h3>
+                        <h3>StudyBud</h3>
                         <p>I built a full-featured blog web application using Django, implementing core functionality like user authentication, post creation/editing, and dynamic content rendering. The app follows the Model-View-Template architecture and uses Django’s built-in tools such as the ORM, class-based views, and templating system to manage data and interface logic efficiently. Key features include CRUD operations for blog posts, pagination for content-heavy views, flash messaging for user feedback, and responsive UI design. The project demonstrates my ability to build scalable, modular web applications with clean URL routing, secure user interactions, and reusable templates.</p>
                         <div class="project-tags">
                             <span>Django</span>
