@@ -3,189 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yameen Alsaaidah | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <title>Yameen Alsaaidah | Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress"></div>
+  
 
     <!-- Navigation -->
-
     <nav id="navbar">
-        <div class="container">
-            <a href="" class="logo">Yameen Alsaaidah</a>
-            
-            <!-- Hamburger Menu Button -->
-            <div class="hamburger-menu">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <span class="logo-text">Yameen</span>
+                    <span class="logo-accent">.</span>
+                </a>
             </div>
             
-            <!-- Desktop Navigation -->
-            <ul class="nav-menu">
-                <li> <i class="fa-duotone fa-solid fa-user"></i> <a href="#about">About</a></li>
-                <li> <i class="fa-duotone fa-solid fa-briefcase"></i> <a href="#experience">Experience</a></li>
-                <li> <i class="fa-duotone fa-solid fa-code"></i> <a href="#projects">Projects</a></li>
-                <li> <i class="fa-duotone fa-solid fa-certificate"></i> <a href="#certificates">Certificates</a></li>
-                <li> <i class="fa-duotone fa-solid fa-tools"></i> <a href="#skills">Skills</a></li>
-                <li> <i class="fa-duotone fa-solid fa-phone"></i> <a href="#contact">Contact</a></li>
-                <li> <a href="/files/YameenAlsaaidah_Resume.pdf" download="YameenAlsaaidah_Resume.pdf" class="cv-download"><i class="fa-regular fa-download"></i> RESUME</a></li>
-                <li><a href="https://github.com/Yameen05" target="_blank" class="github-btn"><i class="fab fa-github"></i></a></li>
-            </ul>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="nav-text">About</span>
+                </a>
+                <a href="#experience" class="nav-link">
+                    <span class="nav-text">Experience</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <span class="nav-text">Skills</span>
+                </a>
+                <a href="#certificates" class="nav-link">
+                    <span class="nav-text">Certificates</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="/files/YameenAlsaaidah_Resume.pdf" download class="resume-btn">
+                    <i class="fas fa-download"></i>
+                    <span>Resume</span>
+                </a>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
             <div class="mobile-menu-header">
-                <h3>Menu</h3>
-                <div class="mobile-close-btn">
-                    <div class="close-line"></div>
-                    <div class="close-line"></div>
+                <div class="mobile-logo">
+                    <span>Yameen</span><span class="accent">.</span>
+                </div>
+                <button class="mobile-close" id="mobile-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="#home" class="mobile-nav-link">
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <span>About</span>
+                </a>
+                <a href="#experience" class="mobile-nav-link">
+                    <span>Experience</span>
+                </a>
+                <a href="#projects" class="mobile-nav-link">
+                    <span>Projects</span>
+                </a>
+                <a href="#skills" class="mobile-nav-link">
+                    <span>Skills</span>
+                </a>
+                <a href="#certificates" class="mobile-nav-link">
+                    <span>Certificates</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link">
+                    <span>Contact</span>
+                </a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="/files/YameenAlsaaidah_Resume.pdf" download class="mobile-resume-btn">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
+                <div class="mobile-social">
+                    <a href="https://github.com/Yameen05" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                 </div>
             </div>
-            <ul class="mobile-nav-menu">
-                <li><a href="#about"><i class="fa-duotone fa-solid fa-user"></i> About</a></li>
-                <li><a href="#experience"><i class="fa-duotone fa-solid fa-briefcase"></i> Experience</a></li>
-                <li><a href="#projects"><i class="fa-duotone fa-solid fa-code"></i> Projects</a></li>
-                <li><a href="#certificates"><i class="fa-duotone fa-solid fa-certificate"></i> Certificates</a></li>
-                <li><a href="#skills"><i class="fa-duotone fa-solid fa-tools"></i> Skills</a></li>
-                <li><a href="#contact"><i class="fa-duotone fa-solid fa-phone"></i> Contact</a></li>
-                <li><a href="/files/YameenAlsaaidah_Resume.pdf" download="YameenAlsaaidah_Resume.pdf" class="mobile-cv-download"><i class="fa-regular fa-download"></i> Download Resume</a></li>
-                <li><a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-            </ul>
         </div>
     </div>
 
     <!-- Hero Section -->
-
-    <section id="hero">
-        <div id="particles-js"></div>
-        <div class="container">
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-gradient"></div>
+        </div>
+        
+        <div class="hero-container">
             <div class="hero-content">
-                <h1>Hi, I'm <span>Yameen Alsaaidah</span></h1>
-
-                <h2>
-                    <span id="typewriter"></span>
-                </h2>
-                <div class="cta-buttons">
-                    <a href="/files/YameenAlsaaidah_Resume.pdf" download="YameenAlsaaidah_Resume.pdf">DOWNLOAD RESUME</a>
+                <div class="hero-intro">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <h1 class="hero-name">
+                        <span class="name-part">Yameen</span>
+                        <span class="name-part">Alsaaidah</span>
+                    </h1>
+             
+                    <p class="hero-description">
+                        Computer Science student at UNC Charlotte passionate about building 
+                        innovative web applications that solve real-world problems.
+                    </p>
                 </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-social">
+                    <a href="https://github.com/Yameen05" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="/files/YameenAlsaaidah_Resume.pdf" download class="social-link">
+                        <i class="fas fa-file-download"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
             </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="hero-image-bg"></div>
+                    <img src="./pics/avatar.png" alt="Yameen Alsaaidah" class="hero-image">
+                    <div class="hero-image-overlay"></div>
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-element" data-tech="React">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="floating-element" data-tech="JavaScript">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="floating-element" data-tech="Python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-element" data-tech="Django">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="floating-element" data-tech="Git">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll to explore</span>
         </div>
     </section>
     
     <!-- About Section -->
-     
-    <section id="about">
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            
             <div class="about-content">
                 <div class="about-text">
-                   <p>I'm a Computer Science student at UNC Charlotte, graduating in May 2027. I'm passionate about software engineering and enjoy building web applications that solve real-world problems. So far, I've built projects using HTML/CSS, Python, Django, and JavaScript, from basic CRUD apps to more dynamic web apps with real functionality.</p>
-                    <p>I'm currently working on building structured, production-style applications to strengthen my understanding of real-world software development practices, from database design to API integration and application architecture.
-                    </p>
-                    <p>I'm seeking an internship where I can apply my current experience, contribute meaningfully to ongoing projects, and continue developing as a software engineer in a professional environment.</p>
-</p>
-                </div>
-                    <div class="about-image">
-                        <div class="image-placeholder">
-                        <img src="./pics/avatar.png" alt="Yameen Alsaaidah">
+                    <div class="about-intro">
+                        <p class="about-lead">
+                            I'm a Computer Science student at UNC Charlotte, graduating in May 2027. 
+                            I'm passionate about software engineering and enjoy building web applications 
+                            that solve real-world problems.
+                        </p>
                     </div>
+                    
+                    <div class="about-details">
+                        <div class="about-block">
+                            <p>
+                                So far, I've built projects using HTML/CSS, Python, Django, and JavaScript, 
+                                ranging from basic CRUD applications to more dynamic web apps with real functionality. 
+                                I'm currently focused on developing structured, production-style applications to 
+                                deepen my understanding of software development practices, including database design, 
+                                API integration, and application architecture.
+                            </p>
+                        </div>
+                        
+                        <div class="about-block">
+                            <p>
+                                I'm actively seeking internship opportunities where I can apply my current experience, 
+                                contribute meaningfully to ongoing projects, and continue growing as a software engineer 
+                                in a professional environment.
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <div class="about-image-frame">
+                            <img src="./pics/avatar.png" alt="Yameen Alsaaidah" class="about-image">
+                        </div>
+                        <div class="about-decorations">
+                            <div class="decoration decoration-1"></div>
+                            <div class="decoration decoration-2"></div>
+                            <div class="decoration decoration-3"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <h4>Technologies I work with:</h4>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-server"></i>
+                                <span>Django</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-java"></i>
+                                <span>Java</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Experience Section -->
-
-    <section id="experience">
+    <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        
-                        <i class="fa-solid fa-school"></i> <h3>B.S. Computer Science</h3>
-                        <h4>University of North Carolina at Charlotte</h4>
-                        <span class="date">Aug 2023 – May 2027</span>
-                        <p>Expected Graduation, May 2027. Relevant coursework includes:</p>
-                        <ul>
-                         <li>Computer Science I</li>
-                        <li>Computer Science II</li>
-                        <li>Data Structures & Algorithms</li>
-                        <li>Software Engineering</li>
-                        <li>Introduction to Computer Systems</li>
-                        <li>Web-Based Application Design & Development</li>
-                        <li>Database Design and Implementation</li>
-                        <li>Computers and Their Impact on Society</li>
-                        </ul>
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="experience-item" data-aos="fade-up">
+                    <div class="experience-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-ring"></div>
                     </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <i class="fa-solid fa-laptop"></i>  <h3>Human Resources Assistant</h3>
-                        <h4>Central Piedmont Community College</h4>
-                        <span class="date">jun 2024 – Dec 2024</span>
-                        <p>Assisted the HR department with internal documentation, SharePoint site management, and employee support initiatives.</p>
-                        <ul>
-                            <li>Developed and maintained internal SharePoint site for employee onboarding and resources</li>
-                            <li>Collaborated with HR staff to digitize paper forms and streamline workflows</li>
-                            <li>Supported employee engagement programs and internal communications</li>
-                        </ul>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="experience-meta">
+                                <h3>B.S. Computer Science</h3>
+                                <h4>University of North Carolina at Charlotte</h4>
+                                <span class="experience-date">Aug 2023 – May 2027</span>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <p>Pursuing comprehensive education in computer science fundamentals and advanced topics.</p>
+                            <div class="coursework">
+                                <h5>Key Coursework:</h5>
+                                <div class="course-tags">
+                                    <span class="course-tag">Data Structures & Algorithms</span>
+                                    <span class="course-tag">Software Engineering</span>
+                                    <span class="course-tag">Web Development</span>
+                                    <span class="course-tag">Database Design</span>
+                                    <span class="course-tag">Computer Systems</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-              <div class="timeline-item">
-    <div class="timeline-content">
-        <i class="fa-solid fa-handshake-angle"></i>
-        <h3>Customer Service & Administrative Assistant</h3>
-        <h4>Spencer Country Market INC</h4>
-        <span class="date">Jan 2020 – Jun 2022</span>
-        <p>Delivered customer support and handled administrative duties in a fast-paced retail environment.</p>
-        <ul>
-            <li>Assisted customers in locating products and answering inquiries</li>
-            <li>Processed merchandise shipments, ensuring accurate pricing and stocking</li>
-            <li>Managed phone calls and routed inquiries to appropriate staff</li>
-            <li>Entered and tracked sales and merchandise reports</li>
-            <li>Designed and printed logos and signage for promotional use</li>
-        </ul>
-    </div>
-</div>
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="experience-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-ring"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="experience-meta">
+                                <h3>Human Resources Assistant</h3>
+                                <h4>Central Piedmont Community College</h4>
+                                <span class="experience-date">Jun 2024 – Dec 2024</span>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <p>Enhanced HR operations through digital solutions and process improvements.</p>
+                            <ul class="achievement-list">
+                                <li>Developed and maintained internal SharePoint site for employee resources</li>
+                                <li>Digitized paper forms and streamlined HR workflows</li>
+                                <li>Supported employee engagement programs and communications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="experience-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-ring"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="experience-meta">
+                                <h3>Customer Service & Administrative Assistant</h3>
+                                <h4>Spencer Country Market INC</h4>
+                                <span class="experience-date">Jan 2020 – Jun 2022</span>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <p>Delivered exceptional customer service while managing administrative responsibilities.</p>
+                            <ul class="achievement-list">
+                                <li>Provided customer support and product assistance</li>
+                                <li>Managed inventory and merchandise processing</li>
+                                <li>Created promotional materials and signage</li>
+                                <li>Handled sales reporting and data entry</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Recent Projects</h2>
-                
-            <div class="projects-grid">
-                
-                
-                
-                
-                
-                
-                <div class="project-card triangle-shape" data-category="fullstack">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="projects-showcase">
+                <div class="project-card" data-aos="fade-up">
                     <div class="project-image">
                         <img src="./pics/trimly.png" alt="Trimly Barber App">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link">
-                                    <i class="fas fa-info-circle"></i> In Progress
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>In Progress</span>
                                 </a>
                             </div>
                         </div>
@@ -193,296 +410,561 @@
                     <div class="project-info">
                         <h3>Trimly – Barber Appointments Platform</h3>
                         <p>
-                            Developing a modern appointment booking platform tailored for barbers and clients to replace manual text message scheduling, improving barber efficiency by over 90%.<br>
-                            Building a dynamic calendar system that allows barbers to set availability and clients to book and manage appointments in real-time, reducing scheduling conflicts by 80%.<br>
-                            Integrating an AI-powered chatbot using OpenAI’s GPT-4 API to assist users with booking queries and general questions.<br>
-                            Implementing location features with embedded maps to show barber shop addresses.<br>
-                            Utilizing Docker for containerized development and deployment.
+                            Modern appointment booking platform for barbers and clients, replacing manual scheduling 
+                            with real-time booking, AI-powered chatbot assistance, and integrated location services. 
+                            Built with Django, React, and containerized with Docker.
                         </p>
                         <div class="project-tags">
                             <span>Django</span>
                             <span>React</span>
                             <span>Tailwind CSS</span>
-                            <span>SQL</span>
                             <span>OpenAI API</span>
                             <span>Docker</span>
-                            <span>Maps</span>
+                            <span>PostgreSQL</span>
                         </div>
                     </div>
                 </div>
                 
-                
-                
-                <!-- Project 1 -->
-                <div class="project-card triangle-shape" data-category="python">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="./pics/django.jpg" alt="Web App">
+                        <img src="./pics/django.jpg" alt="StudyBud Web App">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/JakeHalbach/ITSC3155_Group8" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View Code
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>StudyBud</h3>
-                        <p>I built a full-featured blog web application using Django, implementing core functionality like user authentication, post creation/editing, and dynamic content rendering. The app follows the Model-View-Template architecture and uses Django’s built-in tools such as the ORM, class-based views, and templating system to manage data and interface logic efficiently. Key features include CRUD operations for blog posts, pagination for content-heavy views, flash messaging for user feedback, and responsive UI design. The project demonstrates my ability to build scalable, modular web applications with clean URL routing, secure user interactions, and reusable templates.</p>
+                        <p>
+                            Full-featured blog web application built with Django, implementing user authentication, 
+                            CRUD operations, and dynamic content rendering. Features responsive design, pagination, 
+                            and secure user interactions following MVC architecture.
+                        </p>
                         <div class="project-tags">
                             <span>Django</span>
                             <span>Python</span>
                             <span>HTML/CSS</span>
+                            <span>SQLite</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card triangle-shape" data-category="python">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
                         <img src="./pics/cloud.png" alt="Weather Tracker">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Yameen05/weather-app" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View Code
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Weather Web App</h3>
-                        <p>The Python-based Weather Tracker utilizes the OpenWeatherMap API to fetch real-time weather data. Users can enter a specific location to get information such as temperature and current weather conditions.</p>
+                        <p>
+                            Real-time weather tracking application utilizing the OpenWeatherMap API. 
+                            Users can search for any location to get current weather conditions, 
+                            temperature, and forecasts with a clean, intuitive interface.
+                        </p>
                         <div class="project-tags">
                             <span>JavaScript</span>
-                            <span>API</span>
-        </div>
+                            <span>API Integration</span>
+                            <span>HTML/CSS</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="project-card triangle-shape" data-category="web">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="project-image">
-                        <img src="./pics/sharepoint.png" alt="Share Point Portal">
+                        <img src="./pics/sharepoint.png" alt="HR SharePoint Portal">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link">
-                                    <i class="fas fa-info-circle"></i> Internal Project
+                                    <i class="fas fa-building"></i>
+                                    <span>Internal Project</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>HR SharePoint Portal</h3>
-                        <p>Internal portal built on SharePoint for CPCC's HR department, improving data accessibility and documentation workflow.</p>
+                        <p>
+                            Comprehensive internal portal developed for CPCC's HR department, streamlining 
+                            employee onboarding, resource access, and documentation workflows. Improved 
+                            data accessibility and operational efficiency.
+                        </p>
                         <div class="project-tags">
                             <span>SharePoint</span>
-
+                            <span>Workflow Design</span>
+                            <span>Documentation</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 4 -->
-                <div class="project-card triangle-shape" data-category="web">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="800">
                     <div class="project-image">
-                        <img src="/pics/itis3135.png" alt="Portfolio Website">
+                        <img src="./pics/itis3135.png" alt="Portfolio Website">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://yameen05.github.io/itis3135/" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
                                 </a>
                                 <a href="https://github.com/Yameen05/itis3135" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View Code
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>This portfolio website was created for my ITIS3135 class which showcases my projects and skills, built using HTML, CSS, and JavaScript.</p>
+                        <h3>Academic Portfolio Website</h3>
+                        <p>
+                            Responsive portfolio website created for ITIS3135 coursework, showcasing 
+                            web development fundamentals and design principles. Features clean layout, 
+                            interactive elements, and mobile-first design approach.
+                        </p>
                         <div class="project-tags">
                             <span>HTML/CSS</span>
                             <span>JavaScript</span>
+                            <span>Responsive Design</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 5 -->
-                <div class="project-card triangle-shape" data-category="java">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1000">
                     <div class="project-image">
                         <img src="./pics/bmi.png" alt="BMI Calculator">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Yameen05/BMI-Calculator" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> View Code
+                                    <i class="fab fa-github"></i>
+                                    <span>View Code</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>BMI Calculator</h3>
-                        <p>This BMI Calculator was developed using Java for my final exam. I completed it in under 2 hours, demonstrating my ability to quickly apply core programming concepts under time constraints.</p>
+                        <p>
+                            Java-based BMI calculator application developed as a final exam project. 
+                            Demonstrates object-oriented programming principles, user input handling, 
+                            and mathematical calculations with a clean GUI interface.
+                        </p>
                         <div class="project-tags">
                             <span>Java</span>
+                            <span>GUI Development</span>
+                            <span>OOP</span>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Project 6 -->
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates">
-        <div class="container">
-            <h2 class="section-title">Certificates</h2>
-            <div class="certificates-grid">
-                <div class="certificate-card">
-                    <h3>Responsive Web Design – freeCodeCamp</h3>
-                    <p>Learned HTML, CSS, Flexbox, Grid, and created responsive web layouts from scratch.</p>
-                    <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/responsive-web-design" class="view-certificate" target="_blank">View Certificate</a>
-                </div>
-
-                <div class="certificate-card">
-                    <h3>JavaScript Algorithms and Data Structures – freeCodeCamp</h3>
-                    <p>Mastered JavaScript basics, ES6, functional programming, and data structures through hands-on coding projects.</p>
-                    <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/javascript-algorithms-and-data-structures-v8" class="view-certificate" target="_blank">View Certificate</a>
-                </div>
-
-                <div class="certificate-card">
-                    <h3>CS50's Web Programming with Python and JavaScript – HarvardX</h3>
-                    <p>Currently taking Harvard's CS50 Web Programming course, covering Python, JavaScript, Django, HTML, CSS, Git, and web application development fundamentals.</p>
-                    <a href="https://cs50.harvard.edu/web/2020/" class="view-certificate" target="_blank">Course Info</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-     
-    <section id="skills">
+    <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>HTML/CSS</li>
-                    </ul>
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-content">
+                <div class="skills-intro">
+                    <h3>My Technical Arsenal</h3>
+                    <p>
+                        I'm constantly learning and expanding my skill set to stay current with 
+                        modern development practices and emerging technologies.
+                    </p>
                 </div>
                 
-                <div class="skills-category">
-                    <h3>Frameworks/Libraries</h3>
-                    <ul>
-                        <li>Spring Boot</li>
-                        <li>Django</li>
-                        <li>React</li>
-                        <li>Tailwind CSS</li>
-                        
-                    </ul>
+                <div class="skills-grid">
+                    <div class="skill-category" data-aos="fade-up">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Programming Languages</h4>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Java</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">HTML/CSS</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h4>Frameworks & Libraries</h4>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Django</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Spring Boot</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Databases</h4>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">MySQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4>Development Tools</h4>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">VS Code</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">IntelliJ IDEA</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Cursor</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Git/GitHub</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Postman</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="550">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Technologies & Platforms</h4>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">REST APIs</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JSON/HTTP</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">GitHub Pages</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Linux/Unix</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Bash/Shell</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">DOM Manipulation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Methodologies</h4>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Agile</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Scrum</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Kanban</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Waterfall</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Pair Programming</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                
-                <div class="skills-category">
-                    <h3>Tools</h3>
-                    <ul>    
-                        <li>Git/GitHub</li>
-                        <li>Bash/Shell</li>
-                        <li>Figma</li>
-                        <li>Postman</li>
-                        <li>Docker</li>
-                        <li>IntelliJ IDEA</li>
-                        <li>VS Code</li>
-                        <li>Cursor</li>
-                    </ul>
-                </div>
-                
-                
-                <div class="skills-category">
-                    <h3>Technologies & Applications</h3>
-                    <ul>    
-                        <li>REST APIs</li>
-                        <li>JSON/HTTP</li>
-                        <li>GitHub Pages</li>
-                        <li>Linux/Unix</li>
-                    </ul>    
-                </div>
-      
+            </div>
+        </div>
+    </section>
 
-                
-                <div class="skills-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>SQLite</li>
-
-                    </ul>
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificates & Achievements</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="certificates-content">
+                <div class="certificates-intro">
+                    <h3>Continuous Learning Journey</h3>
+                    <p>
+                        I believe in lifelong learning and continuously updating my skills through 
+                        formal courses, certifications, and hands-on projects.
+                    </p>
                 </div>
                 
-                <div class="skills-category">
-                    <h3>Methodologies</h3>
-                    <ul>
-                        <li>Agile</li>
-                        <li>Scrum</li>
-                        <li>Pair Programming</li>
-                        <li>Waterfall</li>
-                        <li>Kanban</li>
-                    </ul>
+                <div class="certificates-grid">
+                    <div class="certificate-card" data-aos="fade-up">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <i class="fab fa-free-code-camp"></i>
+                            </div>
+                            <div class="certificate-badge">
+                                <span class="badge-text">Certified</span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Responsive Web Design</h4>
+                            <p class="certificate-issuer">freeCodeCamp</p>
+                            <p class="certificate-description">
+                                Comprehensive certification covering HTML, CSS, Flexbox, Grid, and responsive 
+                                design principles. Built multiple projects demonstrating modern web layout techniques.
+                            </p>
+                            <div class="certificate-skills">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">Flexbox</span>
+                                <span class="skill-tag">Grid</span>
+                                <span class="skill-tag">Responsive Design</span>
+                            </div>
+                            <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/responsive-web-design" 
+                               target="_blank" class="certificate-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <i class="fab fa-free-code-camp"></i>
+                            </div>
+                            <div class="certificate-badge">
+                                <span class="badge-text">Certified</span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>JavaScript Algorithms and Data Structures</h4>
+                            <p class="certificate-issuer">freeCodeCamp</p>
+                            <p class="certificate-description">
+                                Advanced JavaScript certification covering ES6, functional programming, 
+                                data structures, and algorithm implementation through hands-on coding challenges.
+                            </p>
+                            <div class="certificate-skills">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">ES6+</span>
+                                <span class="skill-tag">Algorithms</span>
+                                <span class="skill-tag">Data Structures</span>
+                                <span class="skill-tag">Functional Programming</span>
+                            </div>
+                            <a href="https://www.freecodecamp.org/certification/YameenAlsaaid/javascript-algorithms-and-data-structures-v8" 
+                               target="_blank" class="certificate-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="certificate-badge in-progress">
+                                <span class="badge-text">In Progress</span>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>CS50's Web Programming with Python and JavaScript</h4>
+                            <p class="certificate-issuer">Harvard University (HarvardX)</p>
+                            <p class="certificate-description">
+                                Comprehensive web development course covering Python, JavaScript, Django, 
+                                HTML, CSS, Git, and modern web application development fundamentals.
+                            </p>
+                            <div class="certificate-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                            <a href="https://cs50.harvard.edu/web/2020/" 
+                               target="_blank" class="certificate-link">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Course Info</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-
-    
-
-    <section id="contact">
+    <section id="contact" class="contact"></section>
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-boxes">
-                        <div class="contact-box">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:yameenrizeq@gmail.com">yameenrizeq@gmail.com</a>
+                    <h3>Let's build something amazing together</h3>
+                    <p>
+                        I'm currently seeking internship opportunities where I can contribute to meaningful 
+                        projects and grow as a software engineer. Whether you have a project in mind or 
+                        just want to connect, I'd love to hear from you.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <h4>Email</h4>
+                                <a href="mailto:yameenrizeq@gmail.com">yameenrizeq@gmail.com</a>
+                            </div>
                         </div>
-                        <div class="contact-box">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:19803184863">(980) 318-4863</a>
+                        
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <h4>Phone</h4>
+                                <a href="tel:+19803184863">(980) 318-4863</a>
+                            </div>
                         </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank">Connect with me</a>
+                            </div>
+                        </div>
+                        
+                        
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Yameen05" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+                
+                <div class="contact-visual">
+                    <div class="contact-card glass">
+                        <div class="contact-card-header">
+                            <h4>Quick Facts</h4>
+                        </div>
+                        <div class="contact-card-content">
+                            <div class="fact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Charlotte, NC</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>UNC Charlotte</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Graduating May 2027</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-code"></i>
+                                <span>Full-Stack Developer</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Available for Internships</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
-                    <span class="copyright">©</span>
-                    <span class="year">2025</span>
-                    <span class="name">Yameen Alsaaidah</span>
-                    <span class="rights">All rights reserved.</span>
+                    <p>&copy; 2025 Yameen Alsaaidah. All rights reserved.</p>
                 </div>
-                <div class="footer-decoration">
-                    <div class="footer-line"></div>
+                <div class="footer-social">
+                    <a href="https://github.com/Yameen05" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="/files/YameenAlsaaidah_Resume.pdf" download>
+                        <i class="fas fa-file-download"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <div id="theme-popup" class="theme-popup">
-        Toggle dark mode
-        <button class="close-btn" aria-label="Close popup">&times;</button>
-    </div>
 </body>
 </html>
+   
