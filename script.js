@@ -26,6 +26,7 @@ function initializePortfolio() {
   initContactForm();
   initParallaxEffects();
   initSmoothScrolling();
+  initFloatingElements();
 }
 
 // ===== SCROLL PROGRESS =====
@@ -100,6 +101,7 @@ function initMobileMenu() {
     mobileMenu.classList.add("active");
     document.body.style.overflow = "hidden";
 
+  
     // Animate menu items
     gsap.fromTo(
       ".mobile-nav-link",
@@ -632,6 +634,70 @@ if (typeof module !== "undefined" && module.exports) {
     initScrollProgress,
     initNavigation,
   };
+}
+
+// ===== FLOATING ELEMENTS INTERACTIVITY =====
+function initFloatingElements() {
+  const floatingElements = document.querySelectorAll('.floating-element');
+  
+  floatingElements.forEach((element, index) => {
+    // Add click event for fun interaction
+    element.addEventListener('click', function() {
+      // Create a ripple effect
+      const ripple = document.createElement('div');
+      ripple.style.position = 'absolute';
+      ripple.style.width = '100%';
+      ripple.style.height = '100%';
+      ripple.style.borderRadius = 'var(--radius-lg)';
+      ripple.style.background = 'rgba(99, 102, 241, 0.3)';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'transform 0.6s ease-out';
+      ripple.style.pointerEvents = 'none';
+      
+      element.appendChild(ripple);
+      
+      // Trigger ripple animation
+      setTimeout(() => {
+        ripple.style.transform = 'scale(2)';
+        ripple.style.opacity = '0';
+      }, 10);
+      
+      // Remove ripple after animation
+      setTimeout(() => {
+        if (ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 600);
+      
+      // Add a bounce effect
+      gsap.to(element, {
+        scale: 1.2,
+        duration: 0.2,
+        yoyo: true,
+        repeat: 1,
+        ease: "power2.out"
+      });
+    });
+    
+    
+    
+    // Add staggered entrance animation
+    gsap.fromTo(element, 
+      { 
+        opacity: 0, 
+        scale: 0.5,
+        rotation: Math.random() * 360
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+        duration: 0.8,
+        delay: index * 0.1,
+        ease: "back.out(1.7)"
+      }
+    );
+  });
 }
 
 // ===== SKILL BARS ANIMATION =====
