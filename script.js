@@ -155,6 +155,11 @@ function initThemeToggle() {
 
   function updateThemeIcon(theme) {
     themeIcon.className = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+    
+    // Update particle colors for better visibility in current theme
+    if (window.updateParticleColors) {
+      window.updateParticleColors(theme);
+    }
   }
 }
 
@@ -186,9 +191,11 @@ function initHeroBackground() {
     positions[i + 1] = (Math.random() - 0.5) * 20;
     positions[i + 2] = (Math.random() - 0.5) * 20;
 
-    colors[i] = 0.4 + Math.random() * 0.6;
-    colors[i + 1] = 0.4 + Math.random() * 0.6;
-    colors[i + 2] = 1;
+    // Create more visible particles with better contrast
+    const brightness = 0.3 + Math.random() * 0.7; // More contrast
+    colors[i] = brightness;     // Red channel
+    colors[i + 1] = brightness; // Green channel  
+    colors[i + 2] = brightness; // Blue channel (white particles)
   }
 
   const geometry = new THREE.BufferGeometry();
@@ -196,16 +203,46 @@ function initHeroBackground() {
   geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
   const material = new THREE.PointsMaterial({
-    size: 0.05,
+    size: 0.08, // Larger particles
     vertexColors: true,
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.9, // Higher opacity
   });
 
   const particleSystem = new THREE.Points(geometry, material);
   heroScene.add(particleSystem);
 
   heroCamera.position.z = 5;
+
+  // Function to update particle colors based on theme
+  function updateParticleColors(theme) {
+    const colors = geometry.attributes.color.array;
+    
+    for (let i = 0; i < colors.length; i += 3) {
+      if (theme === 'light') {
+        // Dark particles for light theme (better contrast)
+        const brightness = 0.1 + Math.random() * 0.3;
+        colors[i] = brightness;     // Red
+        colors[i + 1] = brightness; // Green
+        colors[i + 2] = brightness; // Blue
+      } else {
+        // Light particles for dark theme
+        const brightness = 0.6 + Math.random() * 0.4;
+        colors[i] = brightness;     // Red
+        colors[i + 1] = brightness; // Green
+        colors[i + 2] = brightness; // Blue
+      }
+    }
+    
+    geometry.attributes.color.needsUpdate = true;
+  }
+
+  // Make function globally accessible for theme toggle
+  window.updateParticleColors = updateParticleColors;
+  
+  // Set initial colors based on current theme
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  updateParticleColors(currentTheme);
 
   // Animation loop
   function animateHero() {
