@@ -521,7 +521,6 @@ function initParallaxEffects() {
   gsap.utils.toArray(".floating-element").forEach((element, index) => {
     gsap.to(element, {
       y: -50,
-      rotation: 360,
       duration: 3 + index,
       repeat: -1,
       yoyo: true,
