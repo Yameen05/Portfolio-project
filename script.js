@@ -27,6 +27,11 @@ function initializePortfolio() {
   initParallaxEffects();
   initSmoothScrolling();
   initFloatingElements();
+  
+  // Performance optimization: Refresh ScrollTrigger after all animations are set up
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
 }
 
 // ===== SCROLL PROGRESS =====
@@ -181,75 +186,78 @@ function initHeroBackground() {
   heroRenderer.setSize(window.innerWidth, window.innerHeight);
   heroRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // Create particles
-  const particleCount = 100;
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
+  // Create simple starfield
+  const starCount = 80;
+  const starGeometry = new THREE.BufferGeometry();
+  const starPositions = new Float32Array(starCount * 3);
+  const starColors = new Float32Array(starCount * 3);
 
-  for (let i = 0; i < particleCount * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 20;
-    positions[i + 1] = (Math.random() - 0.5) * 20;
-    positions[i + 2] = (Math.random() - 0.5) * 20;
+  for (let i = 0; i < starCount; i++) {
+    const i3 = i * 3;
+    // Random positions
+    starPositions[i3] = (Math.random() - 0.5) * 40;
+    starPositions[i3 + 1] = (Math.random() - 0.5) * 40;
+    starPositions[i3 + 2] = (Math.random() - 0.5) * 40;
 
-    // Create more visible particles with better contrast
-    const brightness = 0.3 + Math.random() * 0.7; // More contrast
-    colors[i] = brightness;     // Red channel
-    colors[i + 1] = brightness; // Green channel  
-    colors[i + 2] = brightness; // Blue channel (white particles)
+    // Twinkling stars with varying brightness
+    const brightness = 0.3 + Math.random() * 0.7;
+    starColors[i3] = brightness;
+    starColors[i3 + 1] = brightness;
+    starColors[i3 + 2] = brightness;
   }
 
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
+  starGeometry.setAttribute("color", new THREE.BufferAttribute(starColors, 3));
 
-  const material = new THREE.PointsMaterial({
-    size: 0.08, // Larger particles
+  const starMaterial = new THREE.PointsMaterial({
+    size: 0.06,
     vertexColors: true,
     transparent: true,
-    opacity: 0.9, // Higher opacity
+    opacity: 0.8,
   });
 
-  const particleSystem = new THREE.Points(geometry, material);
-  heroScene.add(particleSystem);
+  const starField = new THREE.Points(starGeometry, starMaterial);
+  heroScene.add(starField);
 
   heroCamera.position.z = 5;
 
-  // Function to update particle colors based on theme
-  function updateParticleColors(theme) {
-    const colors = geometry.attributes.color.array;
+  // Function to update star colors based on theme
+  function updateStarColors(theme) {
+    const colors = starGeometry.attributes.color.array;
     
     for (let i = 0; i < colors.length; i += 3) {
       if (theme === 'light') {
-        // Dark particles for light theme (better contrast)
+        // Darker stars for light theme
         const brightness = 0.1 + Math.random() * 0.3;
-        colors[i] = brightness;     // Red
-        colors[i + 1] = brightness; // Green
-        colors[i + 2] = brightness; // Blue
+        colors[i] = brightness;
+        colors[i + 1] = brightness;
+        colors[i + 2] = brightness;
       } else {
-        // Light particles for dark theme
+        // Brighter stars for dark theme
         const brightness = 0.6 + Math.random() * 0.4;
-        colors[i] = brightness;     // Red
-        colors[i + 1] = brightness; // Green
-        colors[i + 2] = brightness; // Blue
+        colors[i] = brightness;
+        colors[i + 1] = brightness;
+        colors[i + 2] = brightness;
       }
     }
     
-    geometry.attributes.color.needsUpdate = true;
+    starGeometry.attributes.color.needsUpdate = true;
   }
 
   // Make function globally accessible for theme toggle
-  window.updateParticleColors = updateParticleColors;
+  window.updateParticleColors = updateStarColors;
   
   // Set initial colors based on current theme
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  updateParticleColors(currentTheme);
+  updateStarColors(currentTheme);
 
   // Animation loop
   function animateHero() {
     requestAnimationFrame(animateHero);
 
-    particleSystem.rotation.x += 0.001;
-    particleSystem.rotation.y += 0.002;
+    // Rotate star field slowly
+    starField.rotation.x += 0.0005;
+    starField.rotation.y += 0.001;
 
     heroRenderer.render(heroScene, heroCamera);
   }
@@ -265,49 +273,61 @@ function initHeroBackground() {
 
 // ===== TYPEWRITER EFFECT =====
 function initTypewriter() {
-  const dynamicTitle = document.getElementById("dynamic-title");
-  if (!dynamicTitle) return;
+  const typewriterText = document.getElementById("typewriter-text");
+  if (!typewriterText) return;
 
-  const phrases = [
-    "digital experiences",
-    "web applications",
-    "innovative solutions",
-    "user interfaces",
-    "scalable systems",
+  const roles = [
+    "Software Engineer.",
+    "Full-Stack Developer.",
+    "Computer Science Student.",
   ];
 
-  let currentPhrase = 0;
+  let currentRole = 0;
   let currentChar = 0;
   let isDeleting = false;
+  let isWaiting = false;
 
   function typeWriter() {
-    const current = phrases[currentPhrase];
+    const current = roles[currentRole];
+
+    if (isWaiting) {
+      // Wait before starting to type the next role
+      isWaiting = false;
+      setTimeout(typeWriter, 300);
+      return;
+    }
 
     if (isDeleting) {
-      dynamicTitle.textContent = current.substring(0, currentChar - 1);
+      // Deleting characters
+      typewriterText.textContent = current.substring(0, currentChar - 1);
       currentChar--;
 
       if (currentChar === 0) {
         isDeleting = false;
-        currentPhrase = (currentPhrase + 1) % phrases.length;
-        setTimeout(typeWriter, 500);
+        currentRole = (currentRole + 1) % roles.length;
+        isWaiting = true;
+        setTimeout(typeWriter, 200);
         return;
       }
     } else {
-      dynamicTitle.textContent = current.substring(0, currentChar + 1);
+      // Typing characters
+      typewriterText.textContent = current.substring(0, currentChar + 1);
       currentChar++;
 
       if (currentChar === current.length) {
         isDeleting = true;
-        setTimeout(typeWriter, 2000);
+        setTimeout(typeWriter, 1200); // Wait when complete
         return;
       }
     }
 
-    setTimeout(typeWriter, isDeleting ? 50 : 100);
+    // Adjust typing speed - faster
+    const typingSpeed = isDeleting ? 30 : 60;
+    setTimeout(typeWriter, typingSpeed);
   }
 
-  typeWriter();
+  // Start the typewriter effect after a delay
+  setTimeout(typeWriter, 1500);
 }
 
 // ===== SCROLL ANIMATIONS =====
@@ -362,21 +382,23 @@ function initScrollAnimations() {
     { opacity: 1, scale: 1, duration: 1, stagger: 0.2, delay: 1.8 }
   );
 
-  // Section animations
+  // Section animations (optimized)
   gsap.utils.toArray(".section-header").forEach((header) => {
     gsap.fromTo(
       header.children,
-      { opacity: 0, y: 50 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
-        stagger: 0.2,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: header,
-          start: "top 80%",
-          end: "bottom 20%",
+          start: "top 85%",
+          end: "bottom 15%",
           toggleActions: "play none none reverse",
+          fastScrollEnd: true
         },
       }
     );
@@ -436,25 +458,27 @@ function initScrollAnimations() {
     );
   });
 
-  // Project cards animations
-  gsap.utils.toArray(".project-card").forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: index * 0.2,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 90%",
-          end: "bottom 10%",
-          toggleActions: "play none none reverse",
-        },
+  // Project cards animations (optimized)
+  const projectsGrid = document.querySelector('.projects-showcase');
+  if (projectsGrid) {
+    gsap.set('.project-card', { opacity: 0, y: 40, scale: 0.95 });
+    
+    gsap.to('.project-card', {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: projectsGrid,
+        start: "top 85%",
+        end: "bottom 15%",
+        toggleActions: "play none none reverse",
+        fastScrollEnd: true
       }
-    );
-  });
+    });
+  }
 
   // Contact section animations
   gsap.fromTo(
@@ -770,49 +794,62 @@ function initSkillBars() {
 
 // ===== CERTIFICATES ANIMATIONS =====
 function initCertificateAnimations() {
-  gsap.utils.toArray(".certificate-card").forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { opacity: 0, y: 50, rotationY: -15 },
-      {
-        opacity: 1,
-        y: 0,
-        rotationY: 0,
-        duration: 1,
-        delay: index * 0.2,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          end: "bottom 15%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
+  // Optimized: Single ScrollTrigger for all certificate cards
+  const certificatesGrid = document.querySelector('.certificates-grid');
+  if (!certificatesGrid) return;
+
+  // Set initial state for all cards
+  gsap.set('.certificate-card', { 
+    opacity: 0, 
+    y: 30,
+    scale: 0.95
   });
 
-  // Learning stats counter animation
+  // Single optimized animation for all cards
+  gsap.to('.certificate-card', {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: certificatesGrid,
+      start: "top 85%",
+      end: "bottom 15%",
+      toggleActions: "play none none reverse",
+      // Performance optimizations
+      fastScrollEnd: true,
+      refreshPriority: -1
+    }
+  });
+
+  // Learning stats counter animation (optimized)
   gsap.utils.toArray(".stat-number").forEach((stat) => {
     const finalValue = parseInt(stat.textContent);
+    if (isNaN(finalValue)) return;
 
     ScrollTrigger.create({
       trigger: stat,
-      start: "top 80%",
+      start: "top 85%",
       onEnter: () => {
         gsap.fromTo(
           stat,
           { textContent: 0 },
           {
             textContent: finalValue,
-            duration: 2,
+            duration: 1.5,
+            ease: "power2.out",
             snap: { textContent: 1 },
             onUpdate: function () {
               const current = Math.ceil(this.targets()[0].textContent);
-              stat.textContent =
-                current + (stat.textContent.includes("%") ? "%" : "+");
+              stat.textContent = current + (stat.textContent.includes("%") ? "%" : "+");
             },
           }
         );
       },
+      // Performance optimization
+      fastScrollEnd: true
     });
   });
 }
