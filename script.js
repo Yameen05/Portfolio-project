@@ -278,8 +278,11 @@ function initTypewriter() {
 
   const roles = [
     "Software Engineer.",
-    "Full-Stack Developer.",
     "Computer Science Student.",
+    "Front-End Developer.",
+    "Back-End Developer.",
+    "Full-Stack Developer.",
+    "DevOps engineer.",
   ];
 
   let currentRole = 0;
