@@ -1926,6 +1926,8 @@ section {
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: inherit;
 }
 
 .contact-method::before {
@@ -2015,14 +2017,13 @@ section {
   margin-bottom: var(--space-xs);
 }
 
-.contact-method-info a {
+.contact-method-info span {
   color: var(--text-secondary);
-  text-decoration: none;
-  transition: color var(--transition-normal);
   font-weight: 500;
+  transition: color var(--transition-normal);
 }
 
-.contact-method-info a:hover {
+.contact-method:hover .contact-method-info span {
   color: var(--primary);
 }
 
