@@ -3174,3 +3174,22 @@ footer {
 .skill-item:hover .skill-progress[aria-valuenow]::after {
   opacity: 1;
 }
+.project-links { display: flex; gap: 16px; }
+.project-link { font-size: 0.9rem; color: var(--primary); display: inline-flex; align-items: center; gap: 6px; }
+.project-link:hover { color: var(--accent); }
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh;
+  background: var(--bg-secondary); z-index: 2000; transition: right var(--transition-normal); border-left: var(--border-subtle); padding: 24px;
+}
+.mobile-menu.active { right: 0; }
+.mobile-close { background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; float:right; margin-bottom: 40px; }
+.mobile-nav { display: flex; flex-direction: column; gap: 16px; clear:both; }
+.mobile-nav-link { color: var(--text-secondary); font-size: 1.1rem; text-decoration: none; padding: 12px 0; border-bottom: var(--border-subtle); }
+
+.contact-info { display: grid; gap: 16px; margin-bottom: 32px; }
+.contact-method-text h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.contact-method-text p { font-size: 0.9rem; }
+
+footer { border-top: var(--border-subtle); margin-top: 80px; padding: 40px 0; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
