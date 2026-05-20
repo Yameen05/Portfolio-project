@@ -18,6 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
   </head>
   <body>
+    <div class="scroll-progress"></div>
+
     <!-- Navigation -->
     <nav id="navbar">
       <div class="nav-container">
@@ -142,16 +144,27 @@
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-intro">
+            <div class="availability-badge">
+              <span class="availability-dot"></span>
+              Available for Internships
+            </div>
             <span class="hero-greeting">Hello, I'm</span>
             <h1 class="hero-name">
-              <span class="name-part">Yameen</span>
-              <span class="name-part">Alsaaidah</span>
+              <span class="name-first">Yameen</span>
+              <span class="name-last">Alsaaidah</span>
             </h1>
 
             <div class="hero-description">
               <span class="typewriter-text" id="typewriter-text"></span>
               <span class="typewriter-cursor">|</span>
             </div>
+
+            <p class="hero-bio">CS student at UNC Charlotte building full-stack applications at the intersection of web engineering and AI.</p>
+
+            <p class="hero-meta">
+              <i class="fas fa-graduation-cap"></i> UNC Charlotte &nbsp;·&nbsp;
+              <i class="fas fa-map-marker-alt"></i> Charlotte, NC
+            </p>
           </div>
 
           <div class="hero-actions">
@@ -165,60 +178,18 @@
             </a>
           </div>
 
-          <div class="hero-social">
-            <a
-              href="/files/YameenAlsaaidah_Resume.pdf"
-              download
-              class="social-link social-link--resume"
-            >
-              <div class="social-icon">
-                <i class="fas fa-file-download"></i>
-              </div>
-              <div class="social-content">
-                <span class="social-label">Resume</span>
-                <span class="social-subtitle">Download CV</span>
-              </div>
+          <div class="hero-icons">
+            <a href="/files/YameenAlsaaidah_Resume.pdf" download class="hero-icon-btn" title="Download Resume">
+              <i class="fas fa-file-download"></i>
             </a>
-
-            <a
-              href="https://github.com/Yameen05"
-              target="_blank"
-              class="social-link social-link--github"
-            >
-              <div class="social-icon">
-                <i class="fab fa-github"></i>
-              </div>
-              <div class="social-content">
-                <span class="social-label">GitHub</span>
-                <span class="social-subtitle">View Code</span>
-              </div>
+            <a href="https://github.com/Yameen05" target="_blank" class="hero-icon-btn" title="GitHub">
+              <i class="fab fa-github"></i>
             </a>
-
-            <a
-              href="https://www.linkedin.com/in/yameen-alsaaidah/"
-              target="_blank"
-              class="social-link social-link--linkedin"
-            >
-              <div class="social-icon">
-                <i class="fab fa-linkedin"></i>
-              </div>
-              <div class="social-content">
-                <span class="social-label">LinkedIn</span>
-                <span class="social-subtitle">Connect</span>
-              </div>
+            <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank" class="hero-icon-btn" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
             </a>
-
-            <a
-              href="mailto:Yameen.code@gmail.com"
-              class="social-link social-link--email"
-            >
-              <div class="social-icon">
-                <i class="fab fa-google"></i>
-              </div>
-              <div class="social-content">
-                <span class="social-label">Email</span>
-                <span class="social-subtitle">Get in Touch</span>
-              </div>
+            <a href="mailto:Yameen.code@gmail.com" class="hero-icon-btn" title="Email">
+              <i class="fas fa-envelope"></i>
             </a>
           </div>
         </div>
@@ -274,14 +245,20 @@
           </div>
         </div>
       </div>
+      <a href="#about" class="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-mouse-dot"></div>
+        </div>
+        <span class="scroll-text">Scroll to explore</span>
+      </a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header centered-header">
+          <div class="section-label">WHO I AM</div>
           <h2 class="section-title">About Me</h2>
-          <div class="section-line"></div>
         </div>
 
         <div class="about-content">
@@ -379,9 +356,9 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header centered-header">
+          <div class="section-label">CAREER</div>
           <h2 class="section-title">Experience</h2>
-          <div class="section-line"></div>
         </div>
 
         <div class="experience-timeline">
@@ -549,9 +526,9 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header centered-header">
+          <div class="section-label">WORK</div>
           <h2 class="section-title">Featured Projects</h2>
-          <div class="section-line"></div>
         </div>
 
         <div class="projects-showcase">
@@ -766,9 +743,9 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header centered-header">
+          <div class="section-label">EXPERTISE</div>
           <h2 class="section-title">Skills & Technologies</h2>
-          <div class="section-line"></div>
         </div>
 
         <div class="skills-content">
@@ -953,9 +930,9 @@
     <!-- Certificates Section -->
     <section id="certificates" class="certificates">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header centered-header">
+          <div class="section-label">CREDENTIALS</div>
           <h2 class="section-title">Certificates & Achievements</h2>
-          <div class="section-line"></div>
         </div>
 
         <div class="certificates-content">
@@ -1166,9 +1143,9 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header centered-header">
+          <div class="section-label">SAY HELLO</div>
           <h2 class="section-title">Get In Touch</h2>
-          <div class="section-line"></div>
         </div>
 
         <div class="contact-content">
@@ -1238,46 +1215,31 @@
             </div>
           </div>
 
-          <div class="contact-visual">
-            <div class="contact-cards">
-              <div class="contact-card availability-card">
-                <div class="card-icon">
-                  <i class="fas fa-rocket"></i>
+          <div class="contact-form-card">
+            <form class="contact-form" id="contact-form" onsubmit="handleContactForm(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Name <span class="req">*</span></label>
+                  <input type="text" id="contact-name" name="name" placeholder="Your Name" required />
                 </div>
-                <h4>Available Now</h4>
-                <p>
-                  Open to internships, part-time, and full-time opportunities
-                </p>
-                <div class="status-indicator">
-                  <div class="status-dot"></div>
-                  <span>Actively seeking roles</span>
+                <div class="form-group">
+                  <label for="contact-email">Email <span class="req">*</span></label>
+                  <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
                 </div>
               </div>
-
-              <div class="contact-card info-card">
-                <div class="card-header">
-                  <h4>Quick Facts</h4>
-                </div>
-                <div class="fact-items">
-                  <div class="fact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Charlotte, NC</span>
-                  </div>
-                  <div class="fact-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>UNC Charlotte</span>
-                  </div>
-                  <div class="fact-item">
-                    <i class="fas fa-calendar"></i>
-                    <span>Graduating May 2027</span>
-                  </div>
-                  <div class="fact-item">
-                    <i class="fas fa-code"></i>
-                    <span>Full-Stack Developer</span>
-                  </div>
-                </div>
+              <div class="form-group">
+                <label for="contact-message">Message <span class="req">*</span></label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
               </div>
-            </div>
+              <button type="submit" class="btn btn-primary form-submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div class="form-success" id="form-success">
+                <i class="fas fa-check-circle"></i>
+                Thanks! I'll get back to you soon.
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -1287,8 +1249,29 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          <div class="footer-text">
-            <p>&copy; 2025 Yameen Alsaaidah. All rights reserved.</p>
+          <div class="footer-top">
+            <a href="#home" class="footer-logo">
+              <span>Yameen</span><span class="logo-accent">.</span>
+            </a>
+            <div class="footer-social">
+              <a href="https://github.com/Yameen05" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:Yameen.code@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="/files/YameenAlsaaidah_Resume.pdf" download aria-label="Resume">
+                <i class="fas fa-file-download"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="footer-bottom">
+            <p class="footer-text">&copy; 2025 Yameen Alsaaidah. All rights reserved.</p>
+            <p class="footer-subtext">Designed &amp; built from scratch</p>
           </div>
         </div>
       </div>

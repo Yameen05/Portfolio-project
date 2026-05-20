@@ -1016,3 +1016,31 @@ function initAurora() {
 }
 
 initAurora();
+
+// ===== CONTACT FORM =====
+function handleContactForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.querySelector('#contact-name').value;
+  const email = form.querySelector('#contact-email').value;
+  const message = form.querySelector('#contact-message').value;
+
+  // Open mailto as fallback send method
+  const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+  const body = encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`);
+  window.open(`mailto:Yameen.code@gmail.com?subject=${subject}&body=${body}`);
+
+  // Show success message
+  const successEl = document.getElementById('form-success');
+  successEl.classList.add('visible');
+  form.querySelector('.form-submit-btn').disabled = true;
+  form.querySelector('.form-submit-btn span').textContent = 'Sent!';
+
+  setTimeout(() => {
+    form.reset();
+    successEl.classList.remove('visible');
+    const btn = form.querySelector('.form-submit-btn');
+    btn.disabled = false;
+    btn.querySelector('span').textContent = 'Send Message';
+  }, 4000);
+}
