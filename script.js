@@ -1021,48 +1021,7 @@ function initAurora() {
 
 // ===== SCROLL INDICATOR =====
 function initScrollIndicator() {
-  const indicator = document.querySelector('.scroll-indicator');
-  const hero = document.querySelector('#home');
-  if (!indicator || !hero) return;
-
-  // Threshold: hide once scrolled past 40% of viewport height
-  const getThreshold = () => window.innerHeight * 0.4;
-
-  const update = () => {
-    const shouldHide = window.scrollY > getThreshold();
-    indicator.style.opacity = shouldHide ? '0' : '';
-    indicator.style.pointerEvents = shouldHide ? 'none' : '';
-    if (shouldHide) {
-      indicator.classList.add('si-hidden');
-    } else {
-      indicator.classList.remove('si-hidden');
-    }
-  };
-
-  // Scroll event (fires on every scroll tick)
-  window.addEventListener('scroll', update, { passive: true });
-
-  // IntersectionObserver as a secondary trigger
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          indicator.style.opacity = '0';
-          indicator.style.pointerEvents = 'none';
-          indicator.classList.add('si-hidden');
-        } else {
-          indicator.style.opacity = '';
-          indicator.style.pointerEvents = '';
-          indicator.classList.remove('si-hidden');
-        }
-      });
-    },
-    { threshold: [0, 0.1, 0.5, 1] }
-  );
-  observer.observe(hero);
-
-  // Initial state
-  update();
+  // Left for user to implement
 }
 
 // ===== CONTACT FORM =====

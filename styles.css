@@ -134,7 +134,7 @@ body {
   top: 0;
   left: 0;
   width: 0%;
-  height: 3px;
+  height: 4px;
   background: var(--gradient-primary);
   z-index: var(--z-fixed);
   transition: width var(--transition-fast);
@@ -473,7 +473,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
 }
 
 .hero-content {
@@ -573,6 +573,10 @@ body {
   display: flex;
   gap: var(--space-lg);
   margin-bottom: var(--space-3xl);
+}
+
+.hero-actions .btn {
+  padding: 0.875rem var(--space-2xl);
 }
 
 .btn {
@@ -1125,7 +1129,7 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 4.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -2355,8 +2359,12 @@ footer {
 
 @media (max-width: 768px) {
   .hero-container {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px - 5rem);
     padding-top: var(--space-2xl);
+  }
+
+  .scroll-indicator {
+    bottom: 5rem;
   }
 
   .hero-image-container {
@@ -3655,15 +3663,6 @@ footer {
   display: none;
 }
 
-/* ===== SCROLL INDICATOR — HERO ONLY ===== */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  z-index: 10;
-}
 
 /* ===== YEAR TIMELINE BAR ===== */
 .timeline-year-bar {
