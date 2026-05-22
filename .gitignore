@@ -1,0 +1,14 @@
+# Claude Flow artifacts
+ruvector.db
+*.db
+.claude-flow/
+.claude/
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo

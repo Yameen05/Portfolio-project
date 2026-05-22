@@ -579,17 +579,13 @@ function initSmoothScrolling() {
       e.preventDefault();
 
       const targetId = this.getAttribute("href");
-      console.log('Clicking link to:', targetId);
-      
+
       if (targetId === '#') return;
-      
+
       const targetElement = document.querySelector(targetId);
-      console.log('Target element found:', targetElement);
 
       if (targetElement) {
-        // Calculate the position with offset for fixed navbar
         const offsetTop = targetElement.offsetTop - 80;
-        console.log('Scrolling to position:', offsetTop);
         
         // Use native smooth scrolling
         window.scrollTo({
@@ -696,7 +692,6 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     initializePortfolio,
-    initCustomCursor,
     initScrollProgress,
     initNavigation,
   };
