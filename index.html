@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=redesign-5" />
+    <link rel="stylesheet" href="styles.css?v=redesign-12" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -32,9 +32,6 @@
   <body>
     <!-- Ambient background -->
     <div class="bg" aria-hidden="true">
-      <div class="bg-aurora bg-aurora--1"></div>
-      <div class="bg-aurora bg-aurora--2"></div>
-      <div class="bg-aurora bg-aurora--3"></div>
       <canvas id="constellation"></canvas>
       <div class="bg-grid"></div>
       <div class="bg-grain"></div>
@@ -67,9 +64,9 @@
           <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
             <i class="fas fa-sun"></i>
           </button>
-          <a href="/files/YameenAlsaaidah_Resume.pdf" download class="btn btn-ghost btn-sm resume-btn">
-            <i class="fas fa-arrow-down-long"></i>
-            <span>Resume</span>
+          <a href="https://github.com/Yameen05" target="_blank" rel="noopener noreferrer" class="nav-github" aria-label="Visit my GitHub profile">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
           </a>
           <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
             <span></span><span></span>
@@ -149,7 +146,6 @@
               <a href="https://github.com/Yameen05" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
               <a href="mailto:Yameen.code@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
-              <a href="/files/YameenAlsaaidah_Resume.pdf" download class="social-link" aria-label="Resume"><i class="fas fa-file-arrow-down"></i></a>
             </div>
           </div>
 
@@ -246,10 +242,7 @@
                   <span class="stat-num" data-count="5">0</span>
                   <span class="stat-label">Certifications</span>
                 </div>
-                <div class="stat">
-                  <span class="stat-num stat-num--text">2027</span>
-                  <span class="stat-label">B.S. expected</span>
-                </div>
+
                 <div class="stat">
                   <span class="stat-num" data-count="10" data-suffix="+">0</span>
                   <span class="stat-label">Technologies</span>
@@ -335,20 +328,22 @@
       <section id="experience" class="section experience">
         <div class="container">
           <header class="section-head">
-            <span class="eyebrow"><span class="eyebrow-no">03</span> Career</span>
-            <h2 class="section-title">Professional <span class="grad-text">experience</span></h2>
+            <span class="eyebrow">Career</span>
+            <h2 class="section-title">Experience</h2>
           </header>
 
           <div class="timeline">
             <div class="timeline-item reveal">
               <div class="timeline-node"><i class="fas fa-code"></i></div>
               <article class="timeline-card" data-spotlight>
-                <div class="timeline-top">
-                  <span class="badge">Internship</span>
-                  <span class="timeline-date"><i class="fas fa-calendar"></i> May 2026 – Aug 2026</span>
+                <span class="timeline-date">May 2026 – Aug 2026</span>
+                <div class="timeline-heading">
+                  <span class="timeline-card-icon"><i class="fas fa-code"></i></span>
+                  <div>
+                    <h3 class="timeline-role">Software Engineering Intern</h3>
+                    <p class="timeline-org">logestics</p>
+                  </div>
                 </div>
-                <h3 class="timeline-role">Software Engineering Intern</h3>
-                <p class="timeline-org">logestics</p>
                 <p class="timeline-desc">Contributed React, Spring Boot, and MySQL features for shipment scheduling, driver availability, and delivery updates, improving dispatch workflows and search usability. Implemented scheduling validation, optimized REST API-backed queries, and strengthened application reliability through Postman testing, QA defect resolution, GitHub pull requests, and Agile delivery.</p>
                 <div class="tag-row">
                   <span class="tag">React</span>
@@ -364,12 +359,14 @@
             <div class="timeline-item reveal">
               <div class="timeline-node"><i class="fas fa-users"></i></div>
               <article class="timeline-card" data-spotlight>
-                <div class="timeline-top">
-                  <span class="badge">Completed</span>
-                  <span class="timeline-date"><i class="fas fa-calendar"></i> Dec 2025 – Mar 2026</span>
+                <span class="timeline-date">Dec 2025 – Mar 2026</span>
+                <div class="timeline-heading">
+                  <span class="timeline-card-icon"><i class="fas fa-users"></i></span>
+                  <div>
+                    <h3 class="timeline-role">HR &amp; Administrative Assistant</h3>
+                    <p class="timeline-org">HR Unequivocally</p>
+                  </div>
                 </div>
-                <h3 class="timeline-role">HR &amp; Administrative Assistant</h3>
-                <p class="timeline-org">HR Unequivocally</p>
                 <p class="timeline-desc">Supported core HR operations by optimizing workflows, managing critical documents, and strengthening day-to-day team efficiency.</p>
                 <div class="tag-row">
                   <span class="tag">HR Operations</span>
@@ -383,12 +380,14 @@
             <div class="timeline-item reveal">
               <div class="timeline-node"><i class="fas fa-building"></i></div>
               <article class="timeline-card" data-spotlight>
-                <div class="timeline-top">
-                  <span class="badge">Completed</span>
-                  <span class="timeline-date"><i class="fas fa-calendar"></i> Jun 2024 – Dec 2024</span>
+                <span class="timeline-date">Jun 2024 – Dec 2024</span>
+                <div class="timeline-heading">
+                  <span class="timeline-card-icon"><i class="fas fa-building"></i></span>
+                  <div>
+                    <h3 class="timeline-role">Human Resources Assistant</h3>
+                    <p class="timeline-org">Central Piedmont Community College</p>
+                  </div>
                 </div>
-                <h3 class="timeline-role">Human Resources Assistant</h3>
-                <p class="timeline-org">Central Piedmont Community College</p>
                 <p class="timeline-desc">Enhanced HR operations through digital solutions, handling 40+ daily inquiries with a 25% improvement in response time.</p>
                 <div class="tag-row">
                   <span class="tag">HR Compliance</span>
@@ -402,12 +401,14 @@
             <div class="timeline-item reveal">
               <div class="timeline-node"><i class="fas fa-store"></i></div>
               <article class="timeline-card" data-spotlight>
-                <div class="timeline-top">
-                  <span class="badge">Completed</span>
-                  <span class="timeline-date"><i class="fas fa-calendar"></i> Jan 2020 – Jun 2022</span>
+                <span class="timeline-date">Jan 2020 – Jun 2022</span>
+                <div class="timeline-heading">
+                  <span class="timeline-card-icon"><i class="fas fa-store"></i></span>
+                  <div>
+                    <h3 class="timeline-role">Customer Service &amp; Admin Assistant</h3>
+                    <p class="timeline-org">Spencer Country Market INC</p>
+                  </div>
                 </div>
-                <h3 class="timeline-role">Customer Service &amp; Admin Assistant</h3>
-                <p class="timeline-org">Spencer Country Market INC</p>
                 <p class="timeline-desc">Delivered exceptional customer service while managing administrative duties, inventory, and sales reporting.</p>
                 <div class="tag-row">
                   <span class="tag">Customer Service</span>
@@ -695,7 +696,7 @@
 
           <div class="contact-grid">
             <div class="contact-info reveal">
-              <h3 class="contact-lead">Let's build something great together.</h3>
+              <h3 class="contact-lead">Let's build something...</h3>
               <p class="contact-text">
                 I'm currently seeking internship opportunities where I can contribute to
                 meaningful projects and grow as a software engineer. Whether you have a
@@ -703,7 +704,7 @@
               </p>
 
               <div class="contact-methods" data-stagger>
-                <a href="mailto:Yameen.code@gmail.com" class="contact-method" data-spotlight>
+                <a href="mailto:Yameen.code@gmail.com" class="contact-method contact-method--cyan" data-spotlight>
                   <span class="contact-method-icon"><i class="fas fa-envelope"></i></span>
                   <span class="contact-method-info">
                     <span class="contact-method-label">Email</span>
@@ -711,15 +712,7 @@
                   </span>
                   <i class="fas fa-arrow-right contact-arrow"></i>
                 </a>
-                <a href="tel:+19803184863" class="contact-method" data-spotlight>
-                  <span class="contact-method-icon"><i class="fas fa-phone"></i></span>
-                  <span class="contact-method-info">
-                    <span class="contact-method-label">Phone</span>
-                    <span class="contact-method-value">(980) 318-4863</span>
-                  </span>
-                  <i class="fas fa-arrow-right contact-arrow"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank" rel="noopener noreferrer" class="contact-method" data-spotlight>
+                <a href="https://www.linkedin.com/in/yameen-alsaaidah/" target="_blank" rel="noopener noreferrer" class="contact-method contact-method--rose" data-spotlight>
                   <span class="contact-method-icon"><i class="fab fa-linkedin-in"></i></span>
                   <span class="contact-method-info">
                     <span class="contact-method-label">LinkedIn</span>
@@ -727,7 +720,7 @@
                   </span>
                   <i class="fas fa-arrow-right contact-arrow"></i>
                 </a>
-                <a href="https://github.com/Yameen05" target="_blank" rel="noopener noreferrer" class="contact-method" data-spotlight>
+                <a href="https://github.com/Yameen05" target="_blank" rel="noopener noreferrer" class="contact-method contact-method--green" data-spotlight>
                   <span class="contact-method-icon"><i class="fab fa-github"></i></span>
                   <span class="contact-method-info">
                     <span class="contact-method-label">GitHub</span>
@@ -787,6 +780,6 @@
 
     <button class="to-top" id="to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-    <script src="script.js?v=redesign-6"></script>
+    <script src="script.js?v=redesign-7"></script>
   </body>
 </html>

@@ -45,6 +45,10 @@ function initTheme() {
   function apply(theme) {
     root.setAttribute("data-theme", theme);
     icon.className = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    toggle.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
+    toggle.setAttribute("title", `Switch to ${nextTheme} theme`);
+    toggle.setAttribute("aria-pressed", String(theme === "light"));
     window.__theme = theme;
   }
 }
@@ -317,7 +321,7 @@ function initConstellation() {
     }));
   };
 
-  const color = () => (window.__theme === "light" ? "20, 22, 40" : "150, 150, 200");
+  const color = () => (window.__theme === "light" ? "100, 96, 120" : "150, 150, 200");
 
   const draw = () => {
     ctx.clearRect(0, 0, w, h);
