@@ -6,14 +6,14 @@
 /* ---------- Design tokens ---------- */
 :root {
   /* Brand */
-  --violet: #d6b36a;
+  --violet: #a8b7cf;
   --indigo: #5b8cff;
   --cyan: #6fa8ff;
   --rose: var(--cyan);
-  --green: #43d19b;
+  --green: #4fd6a4;
   --amber: var(--violet);
-  --grad: linear-gradient(110deg, #6fa8ff 0%, #43d19b 100%);
-  --grad-soft: linear-gradient(110deg, rgba(111, 168, 255, 0.14), rgba(67, 209, 155, 0.12));
+  --grad: linear-gradient(110deg, #6fa8ff 0%, #4fd6a4 100%);
+  --grad-soft: linear-gradient(110deg, rgba(111, 168, 255, 0.14), rgba(79, 214, 164, 0.12));
   --brand-grad: linear-gradient(120deg, #8b7cff 0%, #6366f1 45%, #22d3ee 100%);
 
   /* Dark theme (default) */
@@ -31,7 +31,7 @@
 
   --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 60px -16px rgba(67, 209, 155, 0.3);
+  --shadow-glow: 0 0 60px -16px rgba(79, 214, 164, 0.3);
   --ring: 0 0 0 1px var(--border) inset;
 
   /* Type */
@@ -51,14 +51,14 @@
 }
 
 :root[data-theme="light"] {
-  --violet: #8a6429;
+  --violet: #60728b;
   --indigo: #315f9f;
   --cyan: #315f9f;
   --rose: var(--cyan);
-  --green: #197454;
+  --green: #238660;
   --amber: var(--violet);
-  --grad: linear-gradient(110deg, #315f9f 0%, #197454 100%);
-  --grad-soft: linear-gradient(110deg, rgba(49, 95, 159, 0.1), rgba(25, 116, 84, 0.09));
+  --grad: linear-gradient(110deg, #315f9f 0%, #238660 100%);
+  --grad-soft: linear-gradient(110deg, rgba(49, 95, 159, 0.1), rgba(35, 134, 96, 0.09));
 
   --bg: #dad9e3;
   --bg-2: #cfced9;
@@ -74,7 +74,7 @@
 
   --shadow-sm: 0 4px 18px rgba(48, 43, 79, 0.1);
   --shadow-md: 0 24px 60px -30px rgba(48, 43, 79, 0.32);
-  --shadow-glow: 0 0 60px -20px rgba(25, 116, 84, 0.2);
+  --shadow-glow: 0 0 60px -20px rgba(35, 134, 96, 0.2);
 }
 
 /* ---------- Reset ---------- */
@@ -1610,7 +1610,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
 /* =====================================================================
    RESTRAINED ACCENT SYSTEM
-   Cobalt, emerald, and muted brass identify content without tinting the
+   Cobalt, mint, and cool slate identify content without tinting the
    page background.
    ===================================================================== */
 .nav-github {
