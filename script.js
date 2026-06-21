@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCounters();
   initTypewriter();
   initSpotlight();
-  initMagnetic();
-  initTilt();
   initBackToTop();
   if (!reduceMotion) initConstellation();
 });
@@ -278,41 +276,6 @@ function initSpotlight() {
       const r = card.getBoundingClientRect();
       card.style.setProperty("--mx", e.clientX - r.left + "px");
       card.style.setProperty("--my", e.clientY - r.top + "px");
-    });
-  });
-}
-
-/* ---------- Magnetic buttons ---------- */
-function initMagnetic() {
-  if (!finePointer || reduceMotion) return;
-  document.querySelectorAll("[data-magnetic]").forEach((el) => {
-    const strength = 0.3;
-    el.addEventListener("pointermove", (e) => {
-      const r = el.getBoundingClientRect();
-      const x = e.clientX - (r.left + r.width / 2);
-      const y = e.clientY - (r.top + r.height / 2);
-      el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
-    });
-    el.addEventListener("pointerleave", () => {
-      el.style.transform = "";
-    });
-  });
-}
-
-/* ---------- 3D tilt ---------- */
-function initTilt() {
-  if (!finePointer || reduceMotion) return;
-  document.querySelectorAll("[data-tilt]").forEach((el) => {
-    const max = 9;
-    el.style.transition = "transform 0.2s var(--ease)";
-    el.addEventListener("pointermove", (e) => {
-      const r = el.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform = `perspective(900px) rotateY(${px * max}deg) rotateX(${-py * max}deg)`;
-    });
-    el.addEventListener("pointerleave", () => {
-      el.style.transform = "perspective(900px) rotateY(0) rotateX(0)";
     });
   });
 }
