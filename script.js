@@ -403,13 +403,10 @@ function handleContactForm(e) {
   const successEl = document.getElementById("form-success");
   const btn = form.querySelector(".form-submit-btn");
   successEl.classList.add("visible");
-  btn.disabled = true;
-  btn.querySelector("span").textContent = "Sent!";
+  btn.querySelector("span").textContent = "Draft opened";
 
   setTimeout(() => {
-    form.reset();
     successEl.classList.remove("visible");
-    btn.disabled = false;
-    btn.querySelector("span").textContent = "Send message";
+    btn.querySelector("span").textContent = "Open email draft";
   }, 4000);
 }
