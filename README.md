@@ -3,7 +3,7 @@
 [![Live Website](https://img.shields.io/badge/Visit-yameenrizeq.com-8000ff?style=for-the-badge&logo=vercel)](https://yameenrizeq.com)
 [![GitHub Source](https://img.shields.io/badge/Source-Code-black?style=for-the-badge&logo=github)](https://github.com/Yameen05/portfolio)
 
-**Official portfolio website** showcasing my projects, skills, and journey as a Computer Science student at UNC Charlotte. Hosted on a custom domain (`yameenrizeq.com`) with responsive design and dark/light mode.
+**Official portfolio website** showcasing my projects, skills, and journey as a senior Computer Science student at UNC Charlotte pursuing B.S. and Early Entry M.S. degrees. Hosted on a custom domain (`yameenrizeq.com`) with responsive design and dark/light mode.
 
 ## ✨ Key Features
 - **Custom Domain**: Professionally hosted at [yameenrizeq.com](https://yameenrizeq.com)
@@ -13,7 +13,7 @@
   - Sticky navigation with smooth scrolling
 - **Optimized Content**:
   - Project showcase with direct GitHub links
-  - Interactive timeline for education/experience
+  - Dedicated education cards and an interactive professional-experience timeline
   - Skills matrix with categorized technologies
 - **Technical Highlights**:
   - 100% vanilla JavaScript (no frameworks)
