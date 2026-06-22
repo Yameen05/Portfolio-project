@@ -430,77 +430,94 @@
             <h2 class="section-title">Featured <span class="grad-text">projects</span></h2>
           </header>
 
-          <!-- Project grid -->
-          <div class="project-grid" data-stagger>
-            <article class="project-card" data-spotlight>
-              <div class="project-media project-media--icon">
-                <i class="fas fa-magnifying-glass-chart"></i>
+          <div class="project-grid project-grid--prototype" data-stagger>
+            <article class="project-card project-card--featured">
+              <div class="project-media project-media--product">
+                <div class="product-preview product-preview--verdict" aria-hidden="true">
+                  <div class="preview-top"><span>Verdict Research</span><span class="preview-live">Analysis complete</span></div>
+                  <div class="preview-verdict"><strong>NVDA</strong><span>BUY</span></div>
+                  <div class="preview-sources">
+                    <span><i class="fas fa-file-lines"></i> SEC filings</span>
+                    <span><i class="fas fa-newspaper"></i> News</span>
+                    <span><i class="fas fa-chart-line"></i> Financials</span>
+                  </div>
+                </div>
               </div>
               <div class="project-body">
+                <p class="project-kicker">Featured · Applied AI</p>
                 <div class="project-head">
                   <h3 class="project-title">Verdict</h3>
                   <a href="https://github.com/Yameen05/finsight" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="View Verdict code"><i class="fab fa-github"></i></a>
                 </div>
-                <p class="project-desc">A multi-agent equity-research platform that turns any stock ticker into a structured report from SEC filings, news sentiment, and live financials — powered by an LLM and RAG pipeline.</p>
+                <p class="project-desc">A multi-agent equity-research platform that combines SEC filings, current news, and live financial data into an explainable investment report.</p>
+                <p class="project-proof"><i class="fas fa-circle-check"></i> Orchestrates specialized agents through an LLM and retrieval pipeline.</p>
                 <div class="tag-row">
                   <span class="tag">Python</span><span class="tag">FastAPI</span>
                   <span class="tag">LangGraph</span><span class="tag">React</span>
                   <span class="tag">OpenAI</span><span class="tag">Pinecone</span>
-                  <span class="tag">Docker</span>
                 </div>
               </div>
             </article>
 
-            <article class="project-card" data-spotlight>
-              <div class="project-media project-media--icon">
-                <i class="fas fa-chart-line"></i>
+            <article class="project-card">
+              <div class="project-media project-media--product">
+                <div class="product-preview product-preview--tally" aria-hidden="true">
+                  <div class="preview-top"><span>Monthly overview</span><span>June</span></div>
+                  <strong class="preview-balance">$4,280</strong>
+                  <div class="preview-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="preview-budget"><span>Budget used</span><strong>68%</strong></div>
+                </div>
               </div>
               <div class="project-body">
+                <p class="project-kicker">Full-stack finance</p>
                 <div class="project-head">
                   <h3 class="project-title">Tally</h3>
                   <a href="https://github.com/Yameen05/FinTrack" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="View Tally code"><i class="fab fa-github"></i></a>
                 </div>
-                <p class="project-desc">A full-stack personal-finance dashboard with bank-account sync through Plaid, budget limits with spending summaries, and AI-assisted insights — a JWT-secured Spring Boot API behind a clean React dashboard.</p>
+                <p class="project-desc">A personal-finance dashboard with Plaid account sync, budget controls, spending summaries, and AI-assisted insights.</p>
+                <p class="project-proof"><i class="fas fa-shield-halved"></i> JWT-secured Spring Boot API with a React client and MySQL data layer.</p>
                 <div class="tag-row">
                   <span class="tag">Java</span><span class="tag">Spring Boot</span>
                   <span class="tag">React</span><span class="tag">MySQL</span>
-                  <span class="tag">Plaid</span><span class="tag">Docker</span>
+                  <span class="tag">Plaid</span>
                 </div>
               </div>
             </article>
 
-            <article class="project-card" data-spotlight>
-              <div class="project-media project-media--icon">
-                <i class="fas fa-scissors"></i>
+            <article class="project-card">
+              <div class="project-media project-media--image">
+                <img src="/pics/trimly.png" alt="Trimly project logo" loading="lazy" />
               </div>
               <div class="project-body">
+                <p class="project-kicker">AI-assisted booking</p>
                 <div class="project-head">
                   <h3 class="project-title">Trimly</h3>
                   <a href="https://github.com/Yameen05/Trimly" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="View Trimly code"><i class="fab fa-github"></i></a>
                 </div>
-                <p class="project-desc">An AI-powered barbershop booking platform with real-time scheduling, a chatbot assistant, and location services — built end-to-end with Django, React, and Docker.</p>
+                <p class="project-desc">A barbershop platform combining real-time appointment scheduling, location services, and an AI assistant.</p>
+                <p class="project-proof"><i class="fas fa-calendar-check"></i> End-to-end booking workflows backed by Django and PostgreSQL.</p>
                 <div class="tag-row">
                   <span class="tag">Django</span><span class="tag">React</span>
                   <span class="tag">TypeScript</span><span class="tag">OpenAI</span>
-                  <span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+                  <span class="tag">PostgreSQL</span>
                 </div>
               </div>
             </article>
 
-            <article class="project-card" data-spotlight>
-              <div class="project-media project-media--icon">
+            <article class="project-card project-card--compact">
+              <div class="project-media project-media--studybud" aria-hidden="true">
                 <i class="fas fa-book-open-reader"></i>
               </div>
               <div class="project-body">
+                <p class="project-kicker">Django collaboration</p>
                 <div class="project-head">
                   <h3 class="project-title">StudyBud</h3>
                   <a href="https://github.com/Yameen05/studybud" target="_blank" rel="noopener noreferrer" class="project-icon-link" aria-label="View StudyBud code"><i class="fab fa-github"></i></a>
                 </div>
-                <p class="project-desc">A study-collaboration app built with Django — user authentication, full CRUD, topic-based rooms, and secure interactions following Django's MTV architecture.</p>
+                <p class="project-desc">A study-room platform with authentication, full CRUD workflows, topic discovery, and secure user interactions using Django's MTV architecture.</p>
                 <div class="tag-row">
                   <span class="tag">Django</span><span class="tag">Python</span>
-                  <span class="tag">SQLite</span><span class="tag">Bootstrap</span>
-                  <span class="tag">MTV</span>
+                  <span class="tag">SQLite</span><span class="tag">MTV</span>
                 </div>
               </div>
             </article>
