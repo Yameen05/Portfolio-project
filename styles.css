@@ -501,7 +501,9 @@ body.menu-open .menu-toggle span:nth-child(2) {
 }
 .section-head {
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  margin-inline: auto;
   max-width: 720px;
+  text-align: center;
 }
 .eyebrow {
   display: inline-flex;
@@ -513,6 +515,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
   text-transform: uppercase;
   color: var(--accent-text);
   margin-bottom: 1rem;
+  margin-inline: auto;
 }
 .eyebrow-no {
   color: var(--text-dim);
@@ -1084,13 +1087,6 @@ body.menu-open .menu-toggle span:nth-child(2) {
 /* =====================================================================
    EXPERIENCE TIMELINE
    ===================================================================== */
-.experience .section-head {
-  text-align: center;
-}
-.experience .eyebrow {
-  margin-inline: auto;
-}
-
 .timeline {
   position: relative;
   display: flex;
