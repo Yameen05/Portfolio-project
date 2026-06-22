@@ -1295,12 +1295,16 @@ body.menu-open .menu-toggle span:nth-child(2) {
   gap: 0.4rem;
 }
 .project-icon-link {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
+  min-height: 38px;
+  padding: 0 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
   border-radius: 9px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
   color: var(--text-muted);
   background: var(--surface-2);
   border: 1px solid var(--border);
