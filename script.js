@@ -1,5 +1,5 @@
 /* =====================================================================
-   Yameen Alsaaidah — Portfolio interactions
+   Yameen Alsaaidah: Portfolio interactions
    Vanilla JS, zero dependencies. Built from scratch.
    ===================================================================== */
 
@@ -7,7 +7,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Start every (re)load at the top — never auto-jump to a section.
+  // Start every (re)load at the top and never auto-jump to a section.
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   if (location.hash) {
     history.replaceState(null, "", location.pathname + location.search);
