@@ -648,22 +648,12 @@ body.menu-open .menu-toggle-bar:last-child {
   overflow: hidden;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  background: var(--bg-inset);
-}
-.portrait-frame::after {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid color-mix(in srgb, var(--bg-raised) 55%, transparent);
-  border-radius: 989px 989px calc(var(--radius) - 6px) calc(var(--radius) - 6px);
-  pointer-events: none;
 }
 .portrait-frame img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 50% 18%;
   filter: saturate(0.92) contrast(1.03);
   transition: transform 0.8s var(--ease);
 }
