@@ -32,7 +32,7 @@
     <link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=ink-3" />
+    <link rel="stylesheet" href="styles.css?v=ink-7" />
   </head>
   <body>
     <a href="#work" class="skip-link">Skip to content</a>
@@ -212,8 +212,9 @@
               <p class="reveal">
                 My recent work lives at the intersection of web engineering and AI —
                 multi-agent pipelines, retrieval-augmented generation, and vector search.
-                My flagship project, <strong>Verdict</strong>, turns SEC filings, news, and
-                live financial data into explainable stock research. Right now I'm building
+                As founding engineer of <strong>Verdict</strong>, I'm building a platform that
+                turns SEC filings, news, and live financial data into explainable stock
+                research — and getting it ready to launch. Alongside it I'm building
                 <strong>Tally</strong>, a personal-finance platform, and looking for an
                 internship where I can contribute to a strong team and keep growing.
               </p>
@@ -237,9 +238,9 @@
             <aside class="about-aside reveal">
               <h3 class="aside-title">Currently</h3>
               <ul class="aside-list">
+                <li><span>Founding</span><strong>Verdict — launching soon</strong></li>
                 <li><span>Building</span><strong>Tally — personal finance</strong></li>
                 <li><span>Studying</span><strong>M.S. coursework in AI</strong></li>
-                <li><span>Exploring</span><strong>Agents, RAG &amp; vector search</strong></li>
                 <li><span>Seeking</span><strong>Software internships</strong></li>
               </ul>
               <h3 class="aside-title">Core stack</h3>
@@ -259,52 +260,10 @@
           <header class="section-head reveal">
             <span class="section-no">02</span>
             <h2 class="section-title">Selected <em>work</em></h2>
-            <p class="section-sub">Five projects that show how I think — from multi-agent AI research to end-to-end product builds.</p>
+            <p class="section-sub">Four projects that show how I think — from full-stack product builds to live data dashboards.</p>
           </header>
 
           <div class="work-list">
-            <!-- Verdict -->
-            <article class="work-item reveal">
-              <div class="work-info">
-                <p class="work-kicker">Applied AI — Featured</p>
-                <h3 class="work-title">Verdict</h3>
-                <p class="work-desc">
-                  A multi-agent equity-research platform that reads SEC filings, current
-                  news, and live financial data, then writes an explainable investment
-                  report with a clear buy / hold / sell verdict.
-                </p>
-                <p class="work-note">Orchestrates specialized agents through an LLM + retrieval pipeline with cited sources.</p>
-                <ul class="work-tags">
-                  <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>React</li><li>OpenAI</li><li>Pinecone</li>
-                </ul>
-                <div class="work-links">
-                  <a href="https://github.com/Yameen05/Verdict" target="_blank" rel="noopener noreferrer" class="work-link">
-                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="work-visual" aria-hidden="true">
-                <div class="window">
-                  <div class="window-bar"><i></i><i></i><i></i><span>verdict — research report</span></div>
-                  <div class="window-body">
-                    <div class="vr-head">
-                      <span class="vr-ticker">NVDA</span>
-                      <span class="vr-verdict">BUY</span>
-                    </div>
-                    <div class="vr-lines"><i style="--w:92%"></i><i style="--w:78%"></i><i style="--w:85%"></i></div>
-                    <div class="vr-sources">
-                      <span>10-K filing</span><span>News · 14 articles</span><span>Live financials</span>
-                    </div>
-                    <div class="vr-agents">
-                      <span>fundamentals-agent <em>done</em></span>
-                      <span>news-agent <em>done</em></span>
-                      <span>valuation-agent <em>writing…</em></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
             <!-- Tally -->
             <article class="work-item reveal">
               <div class="work-info">
@@ -455,69 +414,201 @@
           <header class="section-head reveal">
             <span class="section-no">03</span>
             <h2 class="section-title">Experience<em>.</em></h2>
+            <p class="section-sub">Founding my own product while building for teams — engineering across the full stack.</p>
           </header>
 
-          <ol class="xp-list">
-            <li class="xp-item reveal">
-              <span class="xp-date">May 2026 — Aug 2026</span>
-              <div class="xp-body">
-                <h3 class="xp-role">Software Engineering Intern</h3>
-                <p class="xp-org">Logistics Company — Charlotte, NC</p>
-                <p class="xp-desc">
-                  Contributed React, Spring Boot, and MySQL features for shipment
-                  scheduling, driver availability, and delivery updates, improving
-                  dispatch workflows and search usability. Implemented scheduling
-                  validation, optimized REST-backed queries, and strengthened reliability
-                  through Postman testing, QA defect resolution, and Agile delivery.
-                </p>
-                <ul class="work-tags">
-                  <li>React</li><li>Spring Boot</li><li>MySQL</li><li>REST APIs</li><li>Postman</li><li>Agile</li>
-                </ul>
+          <ol class="timeline">
+            <!-- Verdict — featured founding role -->
+            <li class="tl-item tl-featured reveal">
+              <span class="tl-node" aria-hidden="true"><span class="status-dot"></span></span>
+              <div class="tl-card">
+                <div class="tl-main">
+                  <div class="tl-top">
+                    <span class="pill pill-accent tl-badge">Founding Software Engineer</span>
+                    <span class="tl-date">2025 — Present <em>Launching soon</em></span>
+                  </div>
+                  <h3 class="tl-role">Verdict</h3>
+                  <p class="tl-org">Founder &amp; Software Engineer · Multi-agent equity research</p>
+                  <p class="tl-desc">
+                    I'm the founding software engineer building <strong>Verdict</strong> from
+                    the ground up — a multi-agent platform that reads SEC filings, current
+                    news, and live financial data, then writes an explainable investment
+                    report with a clear buy / hold / sell verdict. I own the product end to
+                    end and I'm getting it ready for its public launch.
+                  </p>
+                  <ul class="tl-points">
+                    <li>Architected and shipped the full stack solo — from vector search and the LLM + retrieval pipeline to the React client.</li>
+                    <li>Orchestrates specialized agents that reason over cited sources to produce transparent, defensible verdicts.</li>
+                    <li>Now hardening reliability, onboarding, and polish ahead of launch.</li>
+                  </ul>
+                  <ul class="work-tags">
+                    <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>React</li><li>OpenAI</li><li>Pinecone</li>
+                  </ul>
+                  <div class="work-links">
+                    <a href="https://github.com/Yameen05/Verdict" target="_blank" rel="noopener noreferrer" class="work-link">
+                      Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="tl-visual" aria-hidden="true">
+                  <div class="window">
+                    <div class="window-bar"><i></i><i></i><i></i><span>verdict — research report</span></div>
+                    <div class="window-body mk">
+                      <div class="mk-head">
+                        <span class="mk-ticker">NVDA</span>
+                        <span class="mk-pill mk-pill-ok">BUY</span>
+                      </div>
+                      <div class="mk-lines"><i style="--w:92%"></i><i style="--w:78%"></i><i style="--w:85%"></i></div>
+                      <div class="mk-chips"><span>10-K filing</span><span>News · 14 articles</span><span>Live financials</span></div>
+                      <div class="mk-rows">
+                        <span>fundamentals-agent <em>done</em></span>
+                        <span>news-agent <em>done</em></span>
+                        <span>valuation-agent <em class="is-accent">writing…</em></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
 
-            <li class="xp-item reveal">
-              <span class="xp-date">Dec 2025 — Mar 2026</span>
-              <div class="xp-body">
-                <h3 class="xp-role">HR &amp; Administrative Assistant</h3>
-                <p class="xp-org">HR Unequivocally</p>
-                <p class="xp-desc">
-                  Supported core HR operations by optimizing workflows, managing critical
-                  documents, and strengthening day-to-day team efficiency.
-                </p>
-                <ul class="work-tags">
-                  <li>HR Operations</li><li>Documentation</li><li>Workflow Optimization</li><li>Compliance</li>
-                </ul>
+            <!-- Software Engineering Intern -->
+            <li class="tl-item reveal">
+              <span class="tl-node" aria-hidden="true"></span>
+              <div class="tl-card">
+                <div class="tl-main">
+                  <div class="tl-top">
+                    <span class="tl-kicker">Software Engineering</span>
+                    <span class="tl-date">May 2026 — Aug 2026</span>
+                  </div>
+                  <h3 class="tl-role">Software Engineering Intern</h3>
+                  <p class="tl-org">Trucking Logistics — Charlotte, NC</p>
+                  <p class="tl-desc">
+                    Contributed React, Spring Boot, and MySQL features for shipment
+                    scheduling, driver availability, and delivery updates, improving
+                    dispatch workflows and search usability. Implemented scheduling
+                    validation, optimized REST-backed queries, and strengthened reliability
+                    through Postman testing, QA defect resolution, and Agile delivery.
+                  </p>
+                  <ul class="work-tags">
+                    <li>React</li><li>Spring Boot</li><li>MySQL</li><li>REST APIs</li><li>Postman</li><li>Agile</li>
+                  </ul>
+                </div>
+                <div class="tl-visual" aria-hidden="true">
+                  <div class="window">
+                    <div class="window-bar"><i></i><i></i><i></i><span>dispatch — live board</span></div>
+                    <div class="window-body mk">
+                      <div class="mk-head">
+                        <span class="mk-ticker">Load #4821</span>
+                        <span class="mk-pill mk-pill-accent">IN TRANSIT</span>
+                      </div>
+                      <div class="mk-chips"><span>Charlotte → Atlanta</span><span>ETA 2:40 PM</span><span>Driver on duty</span></div>
+                      <div class="mk-track"><span>Route progress</span><div class="mk-meter"><i style="--w:68%"></i></div><strong>68%</strong></div>
+                      <div class="mk-rows">
+                        <span>scheduling-service <em>validated</em></span>
+                        <span>route-optimizer <em>done</em></span>
+                        <span>delivery-tracker <em class="is-accent">live</em></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
 
-            <li class="xp-item reveal">
-              <span class="xp-date">Jun 2024 — Dec 2024</span>
-              <div class="xp-body">
-                <h3 class="xp-role">Human Resources Assistant</h3>
-                <p class="xp-org">Central Piedmont Community College</p>
-                <p class="xp-desc">
-                  Enhanced HR operations through digital solutions, handling 40+ daily
-                  inquiries with a 25% improvement in response time.
-                </p>
-                <ul class="work-tags">
-                  <li>HR Compliance</li><li>Employee Records</li><li>Team Coordination</li><li>SharePoint</li>
-                </ul>
+            <!-- HR & Administrative Assistant -->
+            <li class="tl-item reveal">
+              <span class="tl-node" aria-hidden="true"></span>
+              <div class="tl-card">
+                <div class="tl-main">
+                  <div class="tl-top">
+                    <span class="tl-kicker">Operations</span>
+                    <span class="tl-date">Dec 2025 — Mar 2026</span>
+                  </div>
+                  <h3 class="tl-role">HR &amp; Administrative Assistant</h3>
+                  <p class="tl-org">HR Unequivocally</p>
+                  <p class="tl-desc">
+                    Supported core HR operations by optimizing workflows, managing critical
+                    documents, and strengthening day-to-day team efficiency.
+                  </p>
+                  <ul class="work-tags">
+                    <li>HR Operations</li><li>Documentation</li><li>Workflow Optimization</li><li>Compliance</li>
+                  </ul>
+                </div>
+                <div class="tl-visual">
+                  <div class="tl-summary">
+                    <span class="tl-summary-label">Highlights</span>
+                    <ul class="tl-summary-list">
+                      <li>Optimized core HR workflows and day-to-day operations</li>
+                      <li>Managed critical documents and employee records</li>
+                      <li>Strengthened team efficiency and compliance</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </li>
 
-            <li class="xp-item reveal">
-              <span class="xp-date">Jan 2020 — Jun 2022</span>
-              <div class="xp-body">
-                <h3 class="xp-role">Customer Service &amp; Admin Assistant</h3>
-                <p class="xp-org">Spencer Country Market INC</p>
-                <p class="xp-desc">
-                  Delivered exceptional customer service while managing administrative
-                  duties, inventory, and sales reporting.
-                </p>
-                <ul class="work-tags">
-                  <li>Customer Service</li><li>Inventory</li><li>Sales Reporting</li><li>Data Entry</li>
-                </ul>
+            <!-- Human Resources Assistant -->
+            <li class="tl-item reveal">
+              <span class="tl-node" aria-hidden="true"></span>
+              <div class="tl-card">
+                <div class="tl-main">
+                  <div class="tl-top">
+                    <span class="tl-kicker">Operations</span>
+                    <span class="tl-date">Jun 2024 — Dec 2024</span>
+                  </div>
+                  <h3 class="tl-role">Human Resources Assistant</h3>
+                  <p class="tl-org">Central Piedmont Community College</p>
+                  <p class="tl-desc">
+                    Enhanced HR operations through digital solutions, handling 40+ daily
+                    inquiries with a 25% improvement in response time.
+                  </p>
+                  <ul class="work-tags">
+                    <li>HR Compliance</li><li>Employee Records</li><li>Team Coordination</li><li>SharePoint</li>
+                  </ul>
+                </div>
+                <div class="tl-visual">
+                  <div class="tl-summary">
+                    <div class="tl-metrics">
+                      <div class="tl-metric"><strong>40+</strong><span>inquiries handled daily</span></div>
+                      <div class="tl-metric"><strong>25%</strong><span>faster response time</span></div>
+                    </div>
+                    <ul class="tl-summary-list">
+                      <li>Digitized HR processes and employee records</li>
+                      <li>Coordinated support across teams using SharePoint</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Customer Service & Admin Assistant -->
+            <li class="tl-item reveal">
+              <span class="tl-node" aria-hidden="true"></span>
+              <div class="tl-card">
+                <div class="tl-main">
+                  <div class="tl-top">
+                    <span class="tl-kicker">Customer-facing</span>
+                    <span class="tl-date">Jan 2020 — Jun 2022</span>
+                  </div>
+                  <h3 class="tl-role">Customer Service &amp; Admin Assistant</h3>
+                  <p class="tl-org">Spencer Country Market INC</p>
+                  <p class="tl-desc">
+                    Delivered exceptional customer service while managing administrative
+                    duties, inventory, and sales reporting.
+                  </p>
+                  <ul class="work-tags">
+                    <li>Customer Service</li><li>Inventory</li><li>Sales Reporting</li><li>Data Entry</li>
+                  </ul>
+                </div>
+                <div class="tl-visual">
+                  <div class="tl-summary">
+                    <span class="tl-summary-label">Highlights</span>
+                    <ul class="tl-summary-list">
+                      <li>Delivered friendly, reliable customer service</li>
+                      <li>Managed inventory, restocking, and data entry</li>
+                      <li>Prepared regular sales reports</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </li>
           </ol>
