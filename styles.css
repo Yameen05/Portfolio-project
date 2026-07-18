@@ -1,5 +1,5 @@
 /* =====================================================================
-   Yameen Alsaaidah — Portfolio
+   Yameen Alsaaidah · Portfolio
    "Ink & Paper" editorial design system.
    Self-hosted fonts, dark + light themes, zero dependencies.
    ===================================================================== */
@@ -47,7 +47,7 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Dark — deep warm ink */
+/* Dark · deep warm ink */
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #141210;
@@ -66,7 +66,7 @@
   --grain-opacity: 0.05;
 }
 
-/* Light — warm paper */
+/* Light · warm paper */
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: #f6f2ea;
@@ -174,7 +174,7 @@ button {
   top: 12px;
 }
 
-/* Film grain — a subtle paper texture over everything */
+/* Film grain · a subtle paper texture over everything */
 .grain {
   position: fixed;
   inset: 0;
@@ -637,7 +637,7 @@ body.menu-open .menu-toggle-bar:last-child {
   height: 17px;
 }
 
-/* Portrait — arched editorial frame */
+/* Portrait · arched editorial frame */
 .hero-portrait {
   justify-self: center;
   width: min(100%, 380px);

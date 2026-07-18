@@ -1,5 +1,5 @@
 /* =====================================================================
-   Yameen Alsaaidah — Portfolio interactions
+   Yameen Alsaaidah · Portfolio interactions
    Vanilla JS, zero dependencies.
    ===================================================================== */
 
@@ -188,7 +188,7 @@ function initCounters() {
   nums.forEach((n) => io.observe(n));
 }
 
-/* ---------- Footer clock (Charlotte, NC — Eastern time) ---------- */
+/* ---------- Footer clock (Charlotte, NC · Eastern time) ---------- */
 function initClock() {
   const el = document.getElementById("footer-clock");
   if (!el) return;
@@ -199,7 +199,7 @@ function initClock() {
         minute: "2-digit",
         timeZone: "America/New_York",
       }).format(new Date());
-      el.textContent = `Charlotte, NC — ${time}`;
+      el.textContent = `Charlotte, NC · ${time}`;
     } catch (e) {
       el.textContent = "Charlotte, NC";
     }
@@ -227,7 +227,7 @@ function initContactForm() {
 
     const note = document.getElementById("cf-note");
     const label = document.getElementById("cf-submit-label");
-    note.textContent = "Draft opened — send it from your email app to complete.";
+    note.textContent = "Draft opened. Send it from your email app to complete.";
     note.classList.add("is-success");
     label.textContent = "Draft opened";
 
