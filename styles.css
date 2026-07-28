@@ -494,6 +494,7 @@ body.menu-open .menu-toggle-bar:last-child {
 
 /* ---------- Hero ---------- */
 .hero {
+  position: relative;
   min-height: 100svh;
   display: flex;
   align-items: center;
@@ -635,6 +636,39 @@ body.menu-open .menu-toggle-bar:last-child {
 .hero-social .ic {
   width: 17px;
   height: 17px;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(12px, 2.2vh, 24px);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  transform: translateX(-50%);
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s var(--ease),
+    visibility 0.25s ease;
+}
+.scroll-cue:hover {
+  color: var(--accent);
+}
+.scroll-cue .ic {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  animation: scroll-cue-bob 1.8s var(--ease) infinite;
+}
+@keyframes scroll-cue-bob {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(3px); }
 }
 
 /* Portrait · arched editorial frame */
@@ -1941,6 +1975,28 @@ body.menu-open .menu-toggle-bar:last-child {
   }
   .hero-foot {
     max-width: none;
+  }
+  .scroll-cue {
+    position: fixed;
+    z-index: 120;
+    left: 50%;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    width: max-content;
+    margin: 0;
+    padding: 11px 15px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+    transform: translateX(-50%);
+  }
+  .scroll-cue.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, 10px);
   }
 
   .about-grid,

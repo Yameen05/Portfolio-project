@@ -48,12 +48,15 @@ function initTheme() {
 function initHeader() {
   const header = document.getElementById("site-header");
   const bar = document.getElementById("scroll-progress");
+  const scrollCue = document.querySelector(".scroll-cue");
+  const mobileViewport = window.matchMedia("(max-width: 900px)");
   let ticking = false;
 
   const update = () => {
     ticking = false;
     const y = window.scrollY;
     header.classList.toggle("scrolled", y > 12);
+    scrollCue?.classList.toggle("is-hidden", mobileViewport.matches && y > 32);
     const max = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
     bar.style.opacity = y > 4 ? "1" : "0";
@@ -69,6 +72,7 @@ function initHeader() {
     },
     { passive: true }
   );
+  mobileViewport.addEventListener("change", update);
   update();
 }
 
