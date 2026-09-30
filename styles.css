@@ -1537,10 +1537,12 @@ body.menu-open .menu-toggle-bar:last-child {
 }
 
 /* Marqeteq uses the same product-window preview as other technical roles. */
-.mq .mk-head {
+.mq .mk-head,
+.ops-preview .mk-head {
   flex-wrap: wrap;
 }
-.mq .mk-ticker {
+.mq .mk-ticker,
+.ops-preview .mk-ticker {
   font-size: 22px;
   white-space: normal;
 }
@@ -1572,6 +1574,32 @@ body.menu-open .menu-toggle-bar:last-child {
 }
 .mq-tutor p {
   font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* Illustrated workspaces for HR and retail operations. */
+.ops-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.ops-tiles > div {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  padding: 16px 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-inset);
+}
+.ops-tiles .ic {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+}
+.ops-tiles span {
+  font-family: var(--mono);
+  font-size: 10.5px;
   color: var(--ink-soft);
 }
 
