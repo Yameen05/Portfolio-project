@@ -32,7 +32,7 @@
     <link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=ink-10" />
+    <link rel="stylesheet" href="styles.css?v=ink-11" />
   </head>
   <body>
     <a href="#experience" class="skip-link">Skip to content</a>
@@ -275,13 +275,17 @@
             <li class="tl-item reveal" id="marqeteq">
               <span class="tl-node" aria-hidden="true"></span>
               <div class="tl-card">
-                <div class="tl-main">
-                  <div class="tl-top">
-                    <span class="pill pill-accent tl-badge">Current internship</span>
+                <header class="tl-head">
+                  <div class="tl-identity">
+                    <h3 class="tl-role">Marqeteq</h3>
+                    <p class="tl-org">AI Systems Engineer Intern · Remote</p>
+                  </div>
+                  <div class="tl-meta">
+                    <span class="tl-kicker">Current internship</span>
                     <span class="tl-date"><time datetime="2026-08">August 2026</time>–Present</span>
                   </div>
-                  <h3 class="tl-role">Marqeteq</h3>
-                  <p class="tl-org">AI Systems Engineer Intern · Remote</p>
+                </header>
+                <div class="tl-main">
                   <p class="tl-desc">
                     Engineering full-stack and AI systems for an AI-native fintech
                     platform spanning trading education, brokerage connectivity, market
@@ -289,54 +293,65 @@
                     secure brokerage infrastructure, resilient trading workflows,
                     user settings, and context-aware AI assistance.
                   </p>
+                  <ul class="tl-points">
+                    <li>Engineered a unified brokerage layer for a catalog of <strong>45 providers</strong>, including <strong>17 provider-validated integrations</strong>, normalizing authentication, accounts, market data, and trading operations.</li>
+                    <li>Built resilient execution with idempotency, retries, token refresh, rate-limit handling, order reconciliation, and strict paper/live trading isolation.</li>
+                    <li>Developed Next.js and FastAPI workflows for broker discovery, OAuth/API connections, account persistence, risk controls, and trading preferences.</li>
+                    <li>Contributed to a Claude-powered tutor designed around lesson progress, chart state, and trading strategy context.</li>
+                    <li>Implemented encrypted credentials and server-side validation; contributed to compliance and live-trading eligibility controls, asset-aware routing, testing, data infrastructure, and observability.</li>
+                  </ul>
                   <ul class="work-tags" aria-label="Technologies used at Marqeteq">
                     <li>Next.js</li><li>React</li><li>TypeScript</li><li>FastAPI</li>
                     <li>Python</li><li>PostgreSQL</li><li>Redis</li><li>Claude</li>
                     <li>REST APIs</li><li>OAuth</li><li>Fintech APIs</li>
                   </ul>
                 </div>
-                <div class="tl-visual">
-                  <div class="tl-summary">
-                    <span class="tl-summary-label">Engineering highlights</span>
-                    <ul class="tl-summary-list">
-                      <li><strong>Brokerage infrastructure.</strong> Engineered a unified
-                        abstraction across a catalog of 45 providers, including 17
-                        provider-validated integrations, normalizing authentication,
-                        accounts, balances, positions, market data, and trading operations.</li>
-                      <li><strong>Trade execution &amp; reliability.</strong> Built resilient
-                        execution with idempotency protection, token refresh, retries,
-                        rate-limit handling, ambiguous-order reconciliation, and strict
-                        paper/live trading isolation.</li>
-                      <li><strong>Full-stack workflows.</strong> Developed brokerage and
-                        settings functionality with Next.js, React, TypeScript, and
-                        FastAPI: broker discovery, OAuth/API-credential connections,
-                        account persistence, risk controls, and chart and notification
-                        preferences.</li>
-                      <li><strong>Applied AI.</strong> Contributed to a Claude-powered
-                        trading tutor designed to incorporate lesson progress, chart
-                        state, and user strategy context.</li>
-                      <li><strong>Security &amp; production readiness.</strong> Implemented
-                        encrypted credential handling and server-side validation;
-                        worked on compliance gates, live-trading eligibility, and
-                        asset-class-aware routing, with contributions across testing,
-                        observability, and data infrastructure.</li>
-                    </ul>
+                <div class="tl-visual" aria-hidden="true">
+                  <div class="window">
+                    <div class="window-bar"><i></i><i></i><i></i><span>marqeteq · platform preview</span></div>
+                    <div class="window-body mk mq">
+                      <div class="mk-head">
+                        <span class="mk-ticker">Brokerage workspace</span>
+                        <span class="mk-pill mk-pill-accent">PAPER MODE</span>
+                      </div>
+                      <div class="tl-metrics">
+                        <div class="tl-metric"><strong>45</strong><span>providers in catalog</span></div>
+                        <div class="tl-metric"><strong>17</strong><span>validated integrations</span></div>
+                      </div>
+                      <div class="mq-interface">
+                        <span>Accounts</span><span>Market data</span><span>Orders</span>
+                      </div>
+                      <div class="mk-rows">
+                        <span>Broker credentials <em>encrypted</em></span>
+                        <span>Paper / live execution <em>isolated</em></span>
+                        <span>Live trading <em class="is-accent">eligibility gates</em></span>
+                      </div>
+                      <div class="mq-tutor">
+                        <span class="tl-summary-label">Contextual AI tutor · in development</span>
+                        <div class="mk-chips"><span>Lesson progress</span><span>Chart state</span><span>Strategy</span></div>
+                        <p>Learning context → Claude-powered assistance</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </li>
 
-            <!-- Verdict · featured founding role -->
-            <li class="tl-item tl-featured reveal">
-              <span class="tl-node" aria-hidden="true"><span class="status-dot"></span></span>
+            <!-- Verdict · founding role -->
+            <li class="tl-item reveal">
+              <span class="tl-node" aria-hidden="true"></span>
               <div class="tl-card">
-                <div class="tl-main">
-                  <div class="tl-top">
-                    <span class="pill pill-accent tl-badge">Founding Software Engineer</span>
+                <header class="tl-head">
+                  <div class="tl-identity">
+                    <h3 class="tl-role">Verdict</h3>
+                    <p class="tl-org">Founder &amp; Software Engineer · Multi-agent equity research</p>
+                  </div>
+                  <div class="tl-meta">
+                    <span class="tl-kicker">Current venture</span>
                     <span class="tl-date">2025–Present <em>Launching soon</em></span>
                   </div>
-                  <h3 class="tl-role">Verdict</h3>
-                  <p class="tl-org">Founder &amp; Software Engineer · Multi-agent equity research</p>
+                </header>
+                <div class="tl-main">
                   <p class="tl-desc">
                     I'm the founding software engineer building <strong>Verdict</strong> from
                     the ground up, a multi-agent platform that reads SEC filings, current
@@ -383,13 +398,17 @@
             <li class="tl-item reveal">
               <span class="tl-node" aria-hidden="true"></span>
               <div class="tl-card">
-                <div class="tl-main">
-                  <div class="tl-top">
-                    <span class="tl-kicker">Software Engineering</span>
+                <header class="tl-head">
+                  <div class="tl-identity">
+                    <h3 class="tl-role">Trucking Logistics</h3>
+                    <p class="tl-org">Software Engineering Intern · Charlotte, NC</p>
+                  </div>
+                  <div class="tl-meta">
+                    <span class="tl-kicker">Internship</span>
                     <span class="tl-date">May 2026–Aug 2026</span>
                   </div>
-                  <h3 class="tl-role">Software Engineering Intern</h3>
-                  <p class="tl-org">Trucking Logistics · Charlotte, NC</p>
+                </header>
+                <div class="tl-main">
                   <p class="tl-desc">
                     Contributed React, Spring Boot, and MySQL features for shipment
                     scheduling, driver availability, and delivery updates, improving
@@ -426,13 +445,17 @@
             <li class="tl-item reveal">
               <span class="tl-node" aria-hidden="true"></span>
               <div class="tl-card">
-                <div class="tl-main">
-                  <div class="tl-top">
+                <header class="tl-head">
+                  <div class="tl-identity">
+                    <h3 class="tl-role">HR Unequivocally</h3>
+                    <p class="tl-org">HR &amp; Administrative Assistant</p>
+                  </div>
+                  <div class="tl-meta">
                     <span class="tl-kicker">Operations</span>
                     <span class="tl-date">Dec 2025–Mar 2026</span>
                   </div>
-                  <h3 class="tl-role">HR &amp; Administrative Assistant</h3>
-                  <p class="tl-org">HR Unequivocally</p>
+                </header>
+                <div class="tl-main">
                   <p class="tl-desc">
                     Supported core HR operations by optimizing workflows, managing critical
                     documents, and strengthening day-to-day team efficiency.
@@ -458,13 +481,17 @@
             <li class="tl-item reveal">
               <span class="tl-node" aria-hidden="true"></span>
               <div class="tl-card">
-                <div class="tl-main">
-                  <div class="tl-top">
+                <header class="tl-head">
+                  <div class="tl-identity">
+                    <h3 class="tl-role">Central Piedmont Community College</h3>
+                    <p class="tl-org">Human Resources Assistant</p>
+                  </div>
+                  <div class="tl-meta">
                     <span class="tl-kicker">Operations</span>
                     <span class="tl-date">Jun 2024–Dec 2024</span>
                   </div>
-                  <h3 class="tl-role">Human Resources Assistant</h3>
-                  <p class="tl-org">Central Piedmont Community College</p>
+                </header>
+                <div class="tl-main">
                   <p class="tl-desc">
                     Enhanced HR operations through digital solutions, handling 40+ daily
                     inquiries with a 25% improvement in response time.
@@ -492,13 +519,17 @@
             <li class="tl-item reveal">
               <span class="tl-node" aria-hidden="true"></span>
               <div class="tl-card">
-                <div class="tl-main">
-                  <div class="tl-top">
+                <header class="tl-head">
+                  <div class="tl-identity">
+                    <h3 class="tl-role">Spencer Country Market INC</h3>
+                    <p class="tl-org">Customer Service &amp; Admin Assistant</p>
+                  </div>
+                  <div class="tl-meta">
                     <span class="tl-kicker">Customer-facing</span>
                     <span class="tl-date">Jan 2020–Jun 2022</span>
                   </div>
-                  <h3 class="tl-role">Customer Service &amp; Admin Assistant</h3>
-                  <p class="tl-org">Spencer Country Market INC</p>
+                </header>
+                <div class="tl-main">
                   <p class="tl-desc">
                     Delivered exceptional customer service while managing administrative
                     duties, inventory, and sales reporting.
