@@ -48,15 +48,12 @@ function initTheme() {
 function initHeader() {
   const header = document.getElementById("site-header");
   const bar = document.getElementById("scroll-progress");
-  const scrollCue = document.querySelector(".scroll-cue");
-  const mobileViewport = window.matchMedia("(max-width: 900px)");
   let ticking = false;
 
   const update = () => {
     ticking = false;
     const y = window.scrollY;
     header.classList.toggle("scrolled", y > 12);
-    scrollCue?.classList.toggle("is-hidden", mobileViewport.matches && y > 32);
     const max = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
     bar.style.opacity = y > 4 ? "1" : "0";
@@ -72,7 +69,6 @@ function initHeader() {
     },
     { passive: true }
   );
-  mobileViewport.addEventListener("change", update);
   update();
 }
 
@@ -81,23 +77,51 @@ function initMobileMenu() {
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
   if (!toggle || !menu) return;
+  const background = document.querySelectorAll("main, .site-footer");
+  let scrollPosition = 0;
 
-  const setOpen = (open) => {
+  const setOpen = (open, restoreFocus = true) => {
+    if (open === menu.classList.contains("open")) return;
     menu.classList.toggle("open", open);
     document.body.classList.toggle("menu-open", open);
-    document.body.style.overflow = open ? "hidden" : "";
+    menu.inert = !open;
+    background.forEach((el) => { el.inert = open; });
+    if (open) {
+      scrollPosition = window.scrollY;
+      Object.assign(document.body.style, {
+        position: "fixed", top: `-${scrollPosition}px`, width: "100%", overflow: "hidden",
+      });
+    } else {
+      Object.assign(document.body.style, { position: "", top: "", width: "", overflow: "" });
+      window.scrollTo({ top: scrollPosition, behavior: "instant" });
+    }
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     menu.setAttribute("aria-hidden", String(!open));
+    if (open) menu.querySelector("a")?.focus({ preventScroll: true });
+    else if (restoreFocus) toggle.focus({ preventScroll: true });
   };
 
   toggle.addEventListener("click", () => setOpen(!menu.classList.contains("open")));
-  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false, false)));
+  document.querySelector(".wordmark")?.addEventListener("click", () => setOpen(false, false));
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && menu.classList.contains("open")) setOpen(false);
+    if (e.key === "Tab" && menu.classList.contains("open")) {
+      const focusable = [...document.querySelectorAll(".site-header a, .site-header button, .mobile-menu a")]
+        .filter((el) => el.getClientRects().length > 0);
+      const index = focusable.indexOf(document.activeElement);
+      if (e.shiftKey && index <= 0) {
+        e.preventDefault();
+        focusable.at(-1)?.focus();
+      } else if (!e.shiftKey && (index < 0 || index === focusable.length - 1)) {
+        e.preventDefault();
+        focusable[0]?.focus();
+      }
+    }
   });
   // If the viewport grows past the mobile breakpoint, make sure the menu closes.
-  window.matchMedia("(min-width: 1081px)").addEventListener("change", (e) => {
+  window.matchMedia("(min-width: 1201px)").addEventListener("change", (e) => {
     if (e.matches && menu.classList.contains("open")) setOpen(false);
   });
 }
@@ -105,7 +129,8 @@ function initMobileMenu() {
 /* ---------- Reveal on scroll ---------- */
 function initReveal() {
   const items = document.querySelectorAll(".reveal");
-  if (reduceMotion || !("IntersectionObserver" in window)) {
+  // Touch visitors should see content immediately, even during fast scrolling.
+  if (reduceMotion || window.matchMedia("(hover: none)").matches || !("IntersectionObserver" in window)) {
     items.forEach((el) => el.classList.add("in"));
     return;
   }
@@ -120,7 +145,10 @@ function initReveal() {
     },
     { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
   );
-  items.forEach((el) => io.observe(el));
+  items.forEach((el) => {
+    el.classList.add("reveal-pending");
+    io.observe(el);
+  });
 
   // Safety net: anything still hidden after load settles gets revealed.
   setTimeout(() => {

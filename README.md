@@ -12,9 +12,10 @@ An editorial **"Ink & Paper"** design system — Fraunces serif display type, wa
 - **Dark + light themes** — respects `prefers-color-scheme`, persists choice in `localStorage`, no flash on load
 - **Zero external dependencies** — self-hosted variable fonts (Fraunces, Inter, JetBrains Mono), inline SVG icons, no CDN requests
 - **Hand-built project previews** — each project card renders a miniature UI mock in pure CSS that adapts to both themes
-- **Scroll-activated reveals** via the IntersectionObserver API, with full `prefers-reduced-motion` support
-- **Fully responsive** — verified from 320 px phones to 1920 px desktops with no horizontal overflow
-- **Accessible** — skip link, focus-visible styles, aria labels, semantic landmarks
+- **Scroll-activated reveals** on devices with hover support; touchscreens show content immediately, with full `prefers-reduced-motion` support
+- **Tablet layouts** — side-by-side introduction and portrait on iPad, readable project and experience cards, and a compact menu that preserves scroll position
+- **Fully responsive** — adapts from 320 px phones and iPad Split View to desktop screens, with touch-sized controls and form fields that avoid iOS focus zoom
+- **Accessible** — skip link, focus-visible styles, aria labels, semantic landmarks, keyboard support in the mobile menu, and visible content when JavaScript is unavailable
 
 ## 🛠️ Tech Stack
 

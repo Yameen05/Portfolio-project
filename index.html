@@ -32,10 +32,10 @@
     <link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=ink-8" />
+    <link rel="stylesheet" href="styles.css?v=ink-10" />
   </head>
   <body>
-    <a href="#work" class="skip-link">Skip to content</a>
+    <a href="#experience" class="skip-link">Skip to content</a>
 
     <!-- SVG icon sprite -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -66,8 +66,8 @@
 
         <nav class="site-nav" aria-label="Primary">
           <a href="#about" class="nav-link">About</a>
-          <a href="#work" class="nav-link">Work</a>
           <a href="#experience" class="nav-link">Experience</a>
+          <a href="#work" class="nav-link">Work</a>
           <a href="#education" class="nav-link">Education</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#certificates" class="nav-link">Certificates</a>
@@ -91,11 +91,11 @@
     </header>
 
     <!-- ============ Mobile menu ============ -->
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
       <nav class="mobile-nav" aria-label="Mobile">
         <a href="#about" class="mobile-link"><span class="mobile-no">01</span>About</a>
-        <a href="#work" class="mobile-link"><span class="mobile-no">02</span>Work</a>
-        <a href="#experience" class="mobile-link"><span class="mobile-no">03</span>Experience</a>
+        <a href="#experience" class="mobile-link"><span class="mobile-no">02</span>Experience</a>
+        <a href="#work" class="mobile-link"><span class="mobile-no">03</span>Work</a>
         <a href="#education" class="mobile-link"><span class="mobile-no">04</span>Education</a>
         <a href="#skills" class="mobile-link"><span class="mobile-no">05</span>Skills</a>
         <a href="#certificates" class="mobile-link"><span class="mobile-no">06</span>Certificates</a>
@@ -220,8 +220,9 @@
                 As founding engineer of <strong>Verdict</strong>, I'm building a platform that
                 turns SEC filings, news, and live financial data into explainable stock
                 research, and getting it ready to launch. Alongside it I'm building
-                <strong>Tally</strong>, a personal-finance platform, and looking for an
-                internship where I can contribute to a strong team and keep growing.
+                <strong>Tally</strong>, a personal-finance platform, and contributing
+                full-stack fintech and applied AI engineering as an AI Systems Engineer
+                Intern at <strong>Marqeteq</strong>.
               </p>
 
               <dl class="about-stats reveal">
@@ -243,6 +244,7 @@
             <aside class="about-aside reveal">
               <h3 class="aside-title">Currently</h3>
               <ul class="aside-list">
+                <li><span>Engineering</span><strong>Marqeteq · AI systems</strong></li>
                 <li><span>Founding</span><strong>Verdict · launching soon</strong></li>
                 <li><span>Building</span><strong>Tally · personal finance</strong></li>
                 <li><span>Studying</span><strong>M.S. coursework in AI</strong></li>
@@ -259,170 +261,71 @@
         </div>
       </section>
 
-      <!-- ============ Work ============ -->
-      <section id="work" class="section">
-        <div class="container">
-          <header class="section-head reveal">
-            <span class="section-no">02</span>
-            <h2 class="section-title">Selected <em>work</em></h2>
-            <p class="section-sub">Four projects that show how I think: from full-stack product builds to live data dashboards.</p>
-          </header>
-
-          <div class="work-list">
-            <!-- Tally -->
-            <article class="work-item reveal">
-              <div class="work-info">
-                <p class="work-kicker">Full-stack finance</p>
-                <h3 class="work-title">Tally</h3>
-                <p class="work-desc">
-                  A personal-finance dashboard with Plaid account sync, budget controls,
-                  spending summaries, and AI-assisted insights on where the money goes.
-                </p>
-                <p class="work-note">JWT-secured Spring Boot API, React client, MySQL data layer.</p>
-                <ul class="work-tags">
-                  <li>Java</li><li>Spring Boot</li><li>React</li><li>MySQL</li><li>Plaid</li>
-                </ul>
-                <div class="work-links">
-                  <a href="https://github.com/Yameen05/Tally" target="_blank" rel="noopener noreferrer" class="work-link">
-                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="work-visual" aria-hidden="true">
-                <div class="window">
-                  <div class="window-bar"><i></i><i></i><i></i><span>tally · june overview</span></div>
-                  <div class="window-body">
-                    <div class="ty-balance"><span>Total balance</span><strong>$4,280.16</strong></div>
-                    <div class="ty-bars">
-                      <i style="--h:42%"></i><i style="--h:66%"></i><i style="--h:38%"></i>
-                      <i style="--h:82%"></i><i style="--h:54%"></i><i style="--h:71%"></i><i style="--h:47%"></i>
-                    </div>
-                    <div class="ty-budget"><span>Budget used</span><div class="ty-meter"><i style="--w:68%"></i></div><strong>68%</strong></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Trimly -->
-            <article class="work-item reveal">
-              <div class="work-info">
-                <p class="work-kicker">AI-assisted booking</p>
-                <h3 class="work-title">Trimly</h3>
-                <p class="work-desc">
-                  A barbershop platform combining real-time appointment scheduling,
-                  location services, and an AI assistant that answers questions and books
-                  for you.
-                </p>
-                <p class="work-note">End-to-end booking workflows backed by Django and PostgreSQL.</p>
-                <ul class="work-tags">
-                  <li>Django</li><li>React</li><li>TypeScript</li><li>OpenAI</li><li>PostgreSQL</li>
-                </ul>
-                <div class="work-links">
-                  <a href="https://github.com/Yameen05/Trimly" target="_blank" rel="noopener noreferrer" class="work-link">
-                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="work-visual" aria-hidden="true">
-                <div class="window">
-                  <div class="window-bar"><i></i><i></i><i></i><span>trimly · book a chair</span></div>
-                  <div class="window-body">
-                    <div class="tr-service">
-                      <span class="tr-name">Haircut &amp; style</span>
-                      <span class="tr-meta">45 min · $35</span>
-                    </div>
-                    <div class="tr-slots">
-                      <span>9:00</span><span class="is-active">10:30</span><span>12:00</span><span>2:30</span>
-                    </div>
-                    <div class="tr-confirm">Confirmed · Sat, 10:30 AM <em>✓</em></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- StudyBud -->
-            <article class="work-item reveal">
-              <div class="work-info">
-                <p class="work-kicker">Django collaboration</p>
-                <h3 class="work-title">StudyBud</h3>
-                <p class="work-desc">
-                  A study-room platform with authentication, full CRUD workflows, topic
-                  discovery, and secure user interactions built on Django's MTV
-                  architecture.
-                </p>
-                <ul class="work-tags">
-                  <li>Django</li><li>Python</li><li>SQLite</li><li>MTV</li>
-                </ul>
-                <div class="work-links">
-                  <a href="https://github.com/Yameen05/studybud" target="_blank" rel="noopener noreferrer" class="work-link">
-                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="work-visual" aria-hidden="true">
-                <div class="window">
-                  <div class="window-bar"><i></i><i></i><i></i><span>studybud · rooms</span></div>
-                  <div class="window-body">
-                    <div class="sb-room"><span class="sb-topic">Algorithms</span><strong>Dynamic programming study jam</strong><em>12 online</em></div>
-                    <div class="sb-room"><span class="sb-topic">Databases</span><strong>SQL joins, the friendly version</strong><em>7 online</em></div>
-                    <div class="sb-room is-muted"><span class="sb-topic">Web dev</span><strong>Django deployment clinic</strong><em>4 online</em></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- WeatherVibe -->
-            <article class="work-item reveal">
-              <div class="work-info">
-                <p class="work-kicker">Live weather dashboard</p>
-                <h3 class="work-title">WeatherVibe</h3>
-                <p class="work-desc">
-                  A responsive weather dashboard with city search, geolocation, unit
-                  switching, real-time conditions, and a five-day forecast.
-                </p>
-                <ul class="work-tags">
-                  <li>JavaScript</li><li>HTML / CSS</li><li>OpenWeatherMap</li><li>Geolocation</li>
-                </ul>
-                <div class="work-links">
-                  <a href="https://github.com/Yameen05/weather-app" target="_blank" rel="noopener noreferrer" class="work-link">
-                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="work-visual" aria-hidden="true">
-                <div class="window">
-                  <div class="window-bar"><i></i><i></i><i></i><span>weathervibe · charlotte</span></div>
-                  <div class="window-body">
-                    <div class="wv-now"><strong>72°</strong><span>Partly cloudy<br/>Charlotte, NC</span></div>
-                    <div class="wv-days">
-                      <span>MON<strong>76°</strong></span><span>TUE<strong>73°</strong></span>
-                      <span>WED<strong>78°</strong></span><span>THU<strong>74°</strong></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="work-more reveal">
-            <a href="https://github.com/Yameen05" target="_blank" rel="noopener noreferrer" class="btn btn-line">
-              <svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>
-              More on GitHub <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <!-- ============ Experience ============ -->
       <section id="experience" class="section">
         <div class="container">
           <header class="section-head reveal">
-            <span class="section-no">03</span>
+            <span class="section-no">02</span>
             <h2 class="section-title">Experience<em>.</em></h2>
             <p class="section-sub">Founding my own product while building for teams: engineering across the full stack.</p>
           </header>
 
           <ol class="timeline">
+            <!-- Marqeteq · current internship -->
+            <li class="tl-item reveal" id="marqeteq">
+              <span class="tl-node" aria-hidden="true"></span>
+              <div class="tl-card">
+                <div class="tl-main">
+                  <div class="tl-top">
+                    <span class="pill pill-accent tl-badge">Current internship</span>
+                    <span class="tl-date"><time datetime="2026-08">August 2026</time>–Present</span>
+                  </div>
+                  <h3 class="tl-role">Marqeteq</h3>
+                  <p class="tl-org">AI Systems Engineer Intern · Remote</p>
+                  <p class="tl-desc">
+                    Engineering full-stack and AI systems for an AI-native fintech
+                    platform spanning trading education, brokerage connectivity, market
+                    interaction, paper trading, and controlled live execution. Building
+                    secure brokerage infrastructure, resilient trading workflows,
+                    user settings, and context-aware AI assistance.
+                  </p>
+                  <ul class="work-tags" aria-label="Technologies used at Marqeteq">
+                    <li>Next.js</li><li>React</li><li>TypeScript</li><li>FastAPI</li>
+                    <li>Python</li><li>PostgreSQL</li><li>Redis</li><li>Claude</li>
+                    <li>REST APIs</li><li>OAuth</li><li>Fintech APIs</li>
+                  </ul>
+                </div>
+                <div class="tl-visual">
+                  <div class="tl-summary">
+                    <span class="tl-summary-label">Engineering highlights</span>
+                    <ul class="tl-summary-list">
+                      <li><strong>Brokerage infrastructure.</strong> Engineered a unified
+                        abstraction across a catalog of 45 providers, including 17
+                        provider-validated integrations, normalizing authentication,
+                        accounts, balances, positions, market data, and trading operations.</li>
+                      <li><strong>Trade execution &amp; reliability.</strong> Built resilient
+                        execution with idempotency protection, token refresh, retries,
+                        rate-limit handling, ambiguous-order reconciliation, and strict
+                        paper/live trading isolation.</li>
+                      <li><strong>Full-stack workflows.</strong> Developed brokerage and
+                        settings functionality with Next.js, React, TypeScript, and
+                        FastAPI: broker discovery, OAuth/API-credential connections,
+                        account persistence, risk controls, and chart and notification
+                        preferences.</li>
+                      <li><strong>Applied AI.</strong> Contributed to a Claude-powered
+                        trading tutor designed to incorporate lesson progress, chart
+                        state, and user strategy context.</li>
+                      <li><strong>Security &amp; production readiness.</strong> Implemented
+                        encrypted credential handling and server-side validation;
+                        worked on compliance gates, live-trading eligibility, and
+                        asset-class-aware routing, with contributions across testing,
+                        observability, and data infrastructure.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
             <!-- Verdict · featured founding role -->
             <li class="tl-item tl-featured reveal">
               <span class="tl-node" aria-hidden="true"><span class="status-dot"></span></span>
@@ -617,6 +520,160 @@
               </div>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <!-- ============ Work ============ -->
+      <section id="work" class="section">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-no">03</span>
+            <h2 class="section-title">Selected <em>work</em></h2>
+            <p class="section-sub">Four projects that show how I think: from full-stack product builds to live data dashboards.</p>
+          </header>
+
+          <div class="work-list">
+            <!-- Tally -->
+            <article class="work-item reveal">
+              <div class="work-info">
+                <p class="work-kicker">Full-stack finance</p>
+                <h3 class="work-title">Tally</h3>
+                <p class="work-desc">
+                  A personal-finance dashboard with Plaid account sync, budget controls,
+                  spending summaries, and AI-assisted insights on where the money goes.
+                </p>
+                <p class="work-note">JWT-secured Spring Boot API, React client, MySQL data layer.</p>
+                <ul class="work-tags">
+                  <li>Java</li><li>Spring Boot</li><li>React</li><li>MySQL</li><li>Plaid</li>
+                </ul>
+                <div class="work-links">
+                  <a href="https://github.com/Yameen05/Tally" target="_blank" rel="noopener noreferrer" class="work-link">
+                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="work-visual" aria-hidden="true">
+                <div class="window">
+                  <div class="window-bar"><i></i><i></i><i></i><span>tally · june overview</span></div>
+                  <div class="window-body">
+                    <div class="ty-balance"><span>Total balance</span><strong>$4,280.16</strong></div>
+                    <div class="ty-bars">
+                      <i style="--h:42%"></i><i style="--h:66%"></i><i style="--h:38%"></i>
+                      <i style="--h:82%"></i><i style="--h:54%"></i><i style="--h:71%"></i><i style="--h:47%"></i>
+                    </div>
+                    <div class="ty-budget"><span>Budget used</span><div class="ty-meter"><i style="--w:68%"></i></div><strong>68%</strong></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Trimly -->
+            <article class="work-item reveal">
+              <div class="work-info">
+                <p class="work-kicker">AI-assisted booking</p>
+                <h3 class="work-title">Trimly</h3>
+                <p class="work-desc">
+                  A barbershop platform combining real-time appointment scheduling,
+                  location services, and an AI assistant that answers questions and books
+                  for you.
+                </p>
+                <p class="work-note">End-to-end booking workflows backed by Django and PostgreSQL.</p>
+                <ul class="work-tags">
+                  <li>Django</li><li>React</li><li>TypeScript</li><li>OpenAI</li><li>PostgreSQL</li>
+                </ul>
+                <div class="work-links">
+                  <a href="https://github.com/Yameen05/Trimly" target="_blank" rel="noopener noreferrer" class="work-link">
+                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="work-visual" aria-hidden="true">
+                <div class="window">
+                  <div class="window-bar"><i></i><i></i><i></i><span>trimly · book a chair</span></div>
+                  <div class="window-body">
+                    <div class="tr-service">
+                      <span class="tr-name">Haircut &amp; style</span>
+                      <span class="tr-meta">45 min · $35</span>
+                    </div>
+                    <div class="tr-slots">
+                      <span>9:00</span><span class="is-active">10:30</span><span>12:00</span><span>2:30</span>
+                    </div>
+                    <div class="tr-confirm">Confirmed · Sat, 10:30 AM <em>✓</em></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- StudyBud -->
+            <article class="work-item reveal">
+              <div class="work-info">
+                <p class="work-kicker">Django collaboration</p>
+                <h3 class="work-title">StudyBud</h3>
+                <p class="work-desc">
+                  A study-room platform with authentication, full CRUD workflows, topic
+                  discovery, and secure user interactions built on Django's MTV
+                  architecture.
+                </p>
+                <ul class="work-tags">
+                  <li>Django</li><li>Python</li><li>SQLite</li><li>MTV</li>
+                </ul>
+                <div class="work-links">
+                  <a href="https://github.com/Yameen05/studybud" target="_blank" rel="noopener noreferrer" class="work-link">
+                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="work-visual" aria-hidden="true">
+                <div class="window">
+                  <div class="window-bar"><i></i><i></i><i></i><span>studybud · rooms</span></div>
+                  <div class="window-body">
+                    <div class="sb-room"><span class="sb-topic">Algorithms</span><strong>Dynamic programming study jam</strong><em>12 online</em></div>
+                    <div class="sb-room"><span class="sb-topic">Databases</span><strong>SQL joins, the friendly version</strong><em>7 online</em></div>
+                    <div class="sb-room is-muted"><span class="sb-topic">Web dev</span><strong>Django deployment clinic</strong><em>4 online</em></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- WeatherVibe -->
+            <article class="work-item reveal">
+              <div class="work-info">
+                <p class="work-kicker">Live weather dashboard</p>
+                <h3 class="work-title">WeatherVibe</h3>
+                <p class="work-desc">
+                  A responsive weather dashboard with city search, geolocation, unit
+                  switching, real-time conditions, and a five-day forecast.
+                </p>
+                <ul class="work-tags">
+                  <li>JavaScript</li><li>HTML / CSS</li><li>OpenWeatherMap</li><li>Geolocation</li>
+                </ul>
+                <div class="work-links">
+                  <a href="https://github.com/Yameen05/weather-app" target="_blank" rel="noopener noreferrer" class="work-link">
+                    Repository <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="work-visual" aria-hidden="true">
+                <div class="window">
+                  <div class="window-bar"><i></i><i></i><i></i><span>weathervibe · charlotte</span></div>
+                  <div class="window-body">
+                    <div class="wv-now"><strong>72°</strong><span>Partly cloudy<br/>Charlotte, NC</span></div>
+                    <div class="wv-days">
+                      <span>MON<strong>76°</strong></span><span>TUE<strong>73°</strong></span>
+                      <span>WED<strong>78°</strong></span><span>THU<strong>74°</strong></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="work-more reveal">
+            <a href="https://github.com/Yameen05" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>
+              More on GitHub <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -848,6 +905,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=ink-2"></script>
+    <script src="script.js?v=ink-3"></script>
   </body>
 </html>
